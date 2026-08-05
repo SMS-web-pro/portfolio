@@ -58,7 +58,7 @@ export default function Services() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
             {t.services.description}
           </p>
-          <div className="w-12 h-1 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mt-6"></div>
+          <div className="w-12 h-1 bg-primary rounded-full mx-auto mt-6"></div>
         </div>
 
         {/* Services Grid */}

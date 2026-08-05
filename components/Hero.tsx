@@ -32,11 +32,11 @@ export default function Hero() {
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-fade-in-up leading-tight text-balance">
           {language === 'fr' ? (
             <>
-              Transformez votre <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Vision Digitale</span> en Réalité
+              Transformez votre <span className="text-primary">Vision Digitale</span> en Réalité
             </>
           ) : (
             <>
-              Transform Your <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Digital Vision</span> Into Reality
+              Transform Your <span className="text-primary">Digital Vision</span> Into Reality
             </>
           )}
         </h1>

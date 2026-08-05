@@ -104,7 +104,7 @@ export default function CaseStudies() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
             {t.caseStudies.description}
           </p>
-          <div className="w-12 h-1 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mt-6"></div>
+          <div className="w-12 h-1 bg-primary rounded-full mx-auto mt-6"></div>
         </div>
 
         {/* Projects Grid */}
@@ -202,7 +202,7 @@ export default function CaseStudies() {
                 ? 'Explorez mes réalisations en direct. Cliquez pour voir les projets fonctionnels.' 
                 : 'Explore my live work. Click to see functional projects in action.'}
             </p>
-            <div className="w-12 h-1 bg-gradient-to-r from-accent to-primary rounded-full mx-auto mt-6"></div>
+            <div className="w-12 h-1 bg-primary rounded-full mx-auto mt-6"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
