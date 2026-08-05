@@ -114,7 +114,7 @@ export default function Contact() {
             >
               <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">{option.icon}</div>
               <p className="text-sm text-muted-foreground mb-1">{option.label}</p>
-              <p className="text-lg font-semibold text-primary group-hover:text-primary">{option.value}</p>
+              <p className="max-w-full break-all text-base sm:text-lg font-semibold text-primary group-hover:text-primary">{option.value}</p>
             </a>
           ))}
         </div>
