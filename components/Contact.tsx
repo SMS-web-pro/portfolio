@@ -85,7 +85,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-secondary/20">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
@@ -109,12 +109,12 @@ export default function Contact() {
               href={option.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-6 rounded-xl border border-border bg-white text-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group animate-fade-in-up cursor-pointer"
+              className="min-w-0 p-6 rounded-xl border border-border bg-white text-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group animate-fade-in-up cursor-pointer"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">{option.icon}</div>
               <p className="text-sm text-muted-foreground mb-1">{option.label}</p>
-              <p className="max-w-full break-all text-base sm:text-lg font-semibold text-primary group-hover:text-primary">{option.value}</p>
+              <p className="whitespace-nowrap text-base sm:text-lg font-semibold text-primary group-hover:text-primary">{option.value}</p>
             </a>
           ))}
         </div>
