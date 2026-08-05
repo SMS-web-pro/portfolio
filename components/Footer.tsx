@@ -91,8 +91,8 @@ export default function Footer() {
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <div className="space-y-3 text-sm">
               <p>
-                <a href="mailto:sahabyoussef@gmail.com" className="text-primary font-semibold hover:text-primary/80 transition-colors break-all">
-                  📧 sahabyoussef@gmail.com
+                <a href="mailto:contact@siteupservices.online" className="text-primary font-semibold hover:text-primary/80 transition-colors break-all">
+                  📧 contact@siteupservices.online
                 </a>
               </p>
               <p>

@@ -100,7 +100,7 @@ export default function Contact() {
         {/* Contact Options */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {[
-            { icon: '📧', label: language === 'fr' ? 'Email' : 'Email', value: 'sahabyoussef@gmail.com', link: 'mailto:sahabyoussef@gmail.com' },
+            { icon: '📧', label: language === 'fr' ? 'Email' : 'Email', value: 'contact@siteupservices.online', link: 'mailto:contact@siteupservices.online' },
             { icon: '💬', label: t.contact.options.whatsapp, value: '+212 644 627826', link: 'https://wa.me/212644627826' },
             { icon: '📞', label: language === 'fr' ? 'Téléphone' : 'Phone', value: '+212 751 134318', link: 'tel:+212751134318' },
           ].map((option, i) => (
