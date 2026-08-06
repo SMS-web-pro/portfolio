@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter, IBM_Plex_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import BackToTop from '@/components/BackToTop'
+import { AnimatedBackground } from '@/components/AnimatedBackground'
 import './globals.css'
 
 const _inter = Inter({ subsets: ["latin"] });
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased`}>
+        <AnimatedBackground />
         {children}
         <Analytics />
         <BackToTop />

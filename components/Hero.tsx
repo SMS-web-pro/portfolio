@@ -49,18 +49,20 @@ export default function Hero() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
           <button
             onClick={handleContactClick}
-            className="px-8 py-4 bg-gradient-to-r from-primary to-primary/90 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:scale-105 animate-breathe"
+            className="group relative px-8 py-4 bg-gradient-to-r from-primary to-primary/90 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:scale-105 overflow-hidden"
           >
-            {t.hero.cta1}
+            <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <span className="relative">{t.hero.cta1}</span>
           </button>
           <button
             onClick={handleProjectsClick}
-            className="px-8 py-4 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+            className="group px-8 py-4 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 relative overflow-hidden"
           >
-            {t.hero.cta2}
+            <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <span className="relative">{t.hero.cta2}</span>
           </button>
         </div>
 
@@ -69,11 +71,12 @@ export default function Hero() {
           <p className="text-sm text-muted-foreground mb-6 animate-fade-in-up uppercase tracking-widest font-semibold">
             {language === 'fr' ? 'TECHNOLOGIES MAÎTRISÉES' : 'MASTERED TECHNOLOGIES'}
           </p>
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 animate-fade-in-up">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             {['WordPress', 'React', 'Node.js', 'Vercel', 'N8N', 'Make', language === 'fr' ? 'Expert SEO' : 'SEO Expert', 'AI Ready'].map((item, i) => (
               <div
                 key={i}
-                className="px-3 py-1 rounded-lg bg-card border border-border text-xs sm:text-sm font-medium text-foreground hover:border-primary/50 transition-colors duration-300"
+                className="px-3 py-1 rounded-lg bg-card border border-border text-xs sm:text-sm font-medium text-foreground hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:scale-105 cursor-pointer"
+                style={{ animationDelay: `${0.5 + i * 0.08}s` }}
               >
                 ✓ {item}
               </div>
@@ -82,9 +85,10 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-0 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+      {/* Decorative Animated Elements */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl -z-10 animate-float"></div>
+      <div className="absolute bottom-0 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 animate-float-delayed"></div>
+      <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10 animate-blob" style={{ animationDelay: '2s' }}></div>
     </section>
   )
 }
