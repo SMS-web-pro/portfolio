@@ -105,7 +105,7 @@ export default function Services() {
               </div>
 
               {/* Animated Border Glow on Hover */}
-              <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-primary/30 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none animate-glow" style={{ animationDuration: '2s' }}></div>
+              <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-primary/30 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none animate-glow"></div>
             </div>
           ))}
         </div>

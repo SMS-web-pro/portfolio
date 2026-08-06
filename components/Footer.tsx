@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <div className="animate-fade-in-up stagger-1">
             <h4 className="font-semibold text-foreground mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2 text-sm">
               <li>
@@ -60,7 +60,7 @@ export default function Footer() {
           </div>
 
           {/* Resources */}
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="animate-fade-in-up stagger-2">
             <h4 className="font-semibold text-foreground mb-4">Ressources</h4>
             <ul className="space-y-2 text-sm">
               <li>
@@ -87,7 +87,7 @@ export default function Footer() {
           </div>
 
           {/* Social & Contact */}
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <div className="animate-fade-in-up stagger-3">
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <div className="space-y-3 text-sm">
               <p>
@@ -123,7 +123,7 @@ export default function Footer() {
         <div className="border-t border-border mb-8"></div>
 
         {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 animate-fade-in-up stagger-4">
           <p className="text-xs text-muted-foreground">© {currentYear} Sahab Youssef. {language === 'fr' ? 'Tous droits réservés.' : 'All rights reserved.'}</p>
           <div className="flex gap-6 text-sm">
             <a href="/confidentialite" className="text-muted-foreground hover:text-primary transition-colors">

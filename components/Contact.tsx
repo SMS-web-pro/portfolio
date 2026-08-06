@@ -109,8 +109,9 @@ export default function Contact() {
               href={option.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="min-w-0 p-6 rounded-xl border border-border bg-white text-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group animate-fade-in-up cursor-pointer"
-              style={{ animationDelay: `${i * 0.1}s` }}
+              className={`min-w-0 p-6 rounded-xl border border-border bg-white text-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group animate-fade-in-up cursor-pointer ${
+                i === 0 ? 'stagger-1' : i === 1 ? 'stagger-2' : 'stagger-3'
+              }`}
             >
               <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">{option.icon}</div>
               <p className="text-sm text-muted-foreground mb-1">{option.label}</p>

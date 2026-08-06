@@ -24,7 +24,7 @@ export default function Identity() {
             </div>
             
             {/* CV Download Button */}
-            <div className="mt-6 text-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <div className="mt-6 text-center animate-fade-in-up stagger-3">
               <p className="text-sm text-muted-foreground mb-4 font-medium">
                 {language === 'fr' 
                   ? 'Découvrez mon parcours et mes réalisations'

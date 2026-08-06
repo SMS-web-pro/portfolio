@@ -39,7 +39,7 @@ export default function Differentiation() {
                   { icon: '✗', text: language === 'fr' ? 'Code surtout compris par lui' : 'Code only understood by them' },
                   { icon: '✗', text: language === 'fr' ? 'Suivre les tendances, rarement.' : 'Rarely follows trends.' },
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-muted-foreground group-hover:translate-x-2 transition-transform duration-300" style={{ transitionDelay: `${i * 50}ms` }}>
+                  <li key={i} className="flex items-center gap-3 text-muted-foreground group-hover:translate-x-2 transition-transform duration-300">
                     <span className="text-lg text-red-500">{item.icon}</span>
                     {item.text}
                   </li>
@@ -63,8 +63,8 @@ export default function Differentiation() {
                   { icon: '✓', text: language === 'fr' ? 'Code lisible, documenté, maintenable' : 'Clean, documented, maintainable code' },
                   { icon: '✓', text: language === 'fr' ? 'Toujours apprendre, latest tech' : 'Always learning, latest tech stack' },
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-foreground font-medium group-hover:translate-x-2 transition-transform duration-300" style={{ transitionDelay: `${i * 50}ms` }}>
-                    <span className="text-lg text-accent group-hover:scale-150 transition-transform duration-300" style={{ transitionDelay: `${i * 50}ms` }}>{item.icon}</span>
+                  <li key={i} className="flex items-center gap-3 text-foreground font-medium group-hover:translate-x-2 transition-transform duration-300">
+                    <span className="text-lg text-accent group-hover:scale-150 transition-transform duration-300">{item.icon}</span>
                     {item.text}
                   </li>
                 ))}
@@ -109,8 +109,9 @@ export default function Differentiation() {
           ].map((item, i) => (
             <div
               key={i}
-              className="p-6 rounded-xl border border-border bg-white hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 group animate-fade-in-up hover:lift relative overflow-hidden"
-              style={{ animationDelay: `${i * 0.1}s` }}
+              className={`p-6 rounded-xl border border-border bg-white hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 group animate-fade-in-up hover:lift relative overflow-hidden ${
+                i === 0 ? 'stagger-1' : i === 1 ? 'stagger-2' : i === 2 ? 'stagger-3' : i === 3 ? 'stagger-4' : 'stagger-5'
+              }`}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               <div className="relative">
