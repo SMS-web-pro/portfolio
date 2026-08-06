@@ -66,8 +66,9 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group p-8 rounded-xl border border-border bg-white hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 cursor-pointer animate-fade-in-up hover:lift relative overflow-hidden"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`group p-8 rounded-xl border border-border bg-white hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 cursor-pointer animate-fade-in-up hover:lift relative overflow-hidden ${
+                index === 0 ? 'stagger-1' : index === 1 ? 'stagger-2' : 'stagger-3'
+              }`}
             >
               {/* Animated Background Gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
@@ -95,7 +96,6 @@ export default function Services() {
                     <div 
                       key={i} 
                       className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-primary transition-all duration-300 transform group-hover:translate-x-1"
-                      style={{ transitionDelay: `${i * 50}ms` }}
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-accent group-hover:bg-primary transition-all duration-300 group-hover:scale-150"></span>
                       {feature}

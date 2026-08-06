@@ -112,8 +112,9 @@ export default function CaseStudies() {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className="group rounded-2xl overflow-hidden border border-border bg-white hover:border-primary/50 transition-all duration-300 animate-fade-in-up hover:shadow-xl-custom hover:lift relative"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`group rounded-2xl overflow-hidden border border-border bg-white hover:border-primary/50 transition-all duration-300 animate-fade-in-up hover:shadow-xl-custom hover:lift relative ${
+                index === 0 ? 'stagger-1' : index === 1 ? 'stagger-2' : 'stagger-3'
+              }`}
             >
               {/* Image Container */}
               <div className="relative overflow-hidden h-64 bg-gradient-to-br from-primary/10 to-accent/10">
@@ -243,8 +244,9 @@ export default function CaseStudies() {
             ].map((project, i) => (
               <div
                 key={i}
-                className="group rounded-xl border border-border bg-white hover:border-primary/50 transition-all duration-300 cursor-pointer animate-fade-in-up hover:shadow-lg hover:shadow-primary/10 hover:lift relative overflow-hidden"
-                style={{ animationDelay: `${i * 0.1}s` }}
+                className={`group rounded-xl border border-border bg-white hover:border-primary/50 transition-all duration-300 cursor-pointer animate-fade-in-up hover:shadow-lg hover:shadow-primary/10 hover:lift relative overflow-hidden ${
+                  i === 0 ? 'stagger-1' : i === 1 ? 'stagger-2' : 'stagger-3'
+                }`}
                 onClick={() => setSelectedLiveProject(project)}
               >
                 {/* Animated Background */}

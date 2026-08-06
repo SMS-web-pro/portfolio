@@ -62,8 +62,9 @@ export default function Stack() {
           {stackCategories.map((category, index) => (
             <div
               key={index}
-              className={`p-8 rounded-xl border border-border bg-gradient-to-br ${category.color} hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 animate-fade-in-up group hover:lift relative overflow-hidden`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`p-8 rounded-xl border border-border bg-gradient-to-br ${category.color} hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 animate-fade-in-up group hover:lift relative overflow-hidden ${
+                index === 0 ? 'stagger-1' : index === 1 ? 'stagger-2' : 'stagger-3'
+              }`}
             >
               {/* Animated Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-xl"></div>
@@ -75,7 +76,6 @@ export default function Stack() {
                     <span
                       key={i}
                       className="px-3 py-1.5 bg-white border border-border rounded-full text-sm font-medium text-foreground hover:border-primary hover:text-primary hover:shadow-md hover:shadow-primary/20 hover:scale-110 transition-all duration-300 cursor-pointer hover:bg-primary hover:text-white"
-                      style={{ transitionDelay: `${i * 30}ms` }}
                     >
                       {item}
                     </span>
@@ -96,8 +96,9 @@ export default function Stack() {
           ].map((stat, i) => (
             <div
               key={i}
-              className="p-6 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 text-center group hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 animate-scale-in hover:lift relative overflow-hidden"
-              style={{ animationDelay: `${i * 0.1}s` }}
+              className={`p-6 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 text-center group hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 animate-scale-in hover:lift relative overflow-hidden ${
+                i === 0 ? 'stagger-1' : i === 1 ? 'stagger-2' : i === 2 ? 'stagger-3' : 'stagger-4'
+              }`}
             >
               {/* Animated Background */}
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>

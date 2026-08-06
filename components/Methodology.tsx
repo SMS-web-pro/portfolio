@@ -72,8 +72,9 @@ export default function Methodology() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="group relative animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`group relative animate-fade-in-up ${
+                index === 0 ? 'stagger-1' : index === 1 ? 'stagger-2' : index === 2 ? 'stagger-3' : 'stagger-4'
+              }`}
             >
               {/* Connector Line */}
               {index < steps.length - 1 && (
@@ -110,7 +111,6 @@ export default function Methodology() {
                           <span
                             key={i}
                             className="px-3 py-1.5 rounded-full text-xs font-medium bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 hover:scale-110 transform"
-                            style={{ transitionDelay: `${i * 50}ms` }}
                           >
                             ✓ {detail}
                           </span>
@@ -147,7 +147,6 @@ export default function Methodology() {
                 <div 
                   key={i} 
                   className="flex items-center gap-3 group/item animate-fade-in-up hover:translate-x-2 transition-transform duration-300"
-                  style={{ animationDelay: `${i * 0.05}s` }}
                 >
                   <div className="w-6 h-6 rounded-full bg-accent/20 text-accent flex items-center justify-center flex-shrink-0 group-hover/item:bg-accent group-hover/item:text-white group-hover/item:scale-125 transition-all duration-300">
                     ✓
