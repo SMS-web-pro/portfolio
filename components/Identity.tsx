@@ -17,8 +17,8 @@ export default function Identity() {
           <div className="relative order-2 md:order-1 animate-slide-in-left">
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 via-accent/10 to-primary/10 border border-border p-2 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 overflow-hidden">
               <img 
-                src="/sahab.jpg" 
-                alt="Sahab Youssef" 
+                src="/sahab-profile.jpg" 
+                alt="Sahab Youssef working at laptop" 
                 className="w-full h-full rounded-xl object-cover"
               />
             </div>
