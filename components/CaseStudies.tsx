@@ -104,7 +104,7 @@ export default function CaseStudies() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
             {t.caseStudies.description}
           </p>
-          <div className="w-12 h-1 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mt-6"></div>
+          <div className="w-12 h-1 bg-primary rounded-full mx-auto mt-6"></div>
         </div>
 
         {/* Projects Grid */}
@@ -112,8 +112,9 @@ export default function CaseStudies() {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className="group rounded-2xl overflow-hidden border border-border bg-white hover:border-primary/50 transition-all duration-300 animate-fade-in-up hover:shadow-xl-custom"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`group rounded-2xl overflow-hidden border border-border bg-white hover:border-primary/50 transition-all duration-300 animate-fade-in-up hover:shadow-xl-custom hover:lift relative ${
+                index === 0 ? 'stagger-1' : index === 1 ? 'stagger-2' : 'stagger-3'
+              }`}
             >
               {/* Image Container */}
               <div className="relative overflow-hidden h-64 bg-gradient-to-br from-primary/10 to-accent/10">
@@ -121,9 +122,13 @@ export default function CaseStudies() {
                   src={project.image || '/placeholder.svg'}
                   alt={project.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="object-cover group-hover:scale-125 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                {/* Animated Corner Badge */}
+                <div className="absolute top-0 right-0 bg-primary text-white px-4 py-2 text-xs font-bold transform translate-x-12 group-hover:translate-x-0 transition-transform duration-300">
+                  {language === 'fr' ? 'LIVE' : 'LIVE'}
+                </div>
               </div>
 
               {/* Content */}
@@ -179,10 +184,11 @@ export default function CaseStudies() {
                 {/* View Details CTA */}
                 <button
                   onClick={() => handleViewDetails(project)}
-                  className="w-full px-4 py-3 bg-gradient-to-r from-primary to-primary/90 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group/btn"
+                  className="w-full px-4 py-3 bg-gradient-to-r from-primary to-primary/90 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group/btn relative overflow-hidden"
                 >
-                  <span>{language === 'fr' ? 'Voir le détail' : 'View Details'}</span>
-                  <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute inset-0 bg-white/20 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                  <span className="relative">{language === 'fr' ? 'Voir le détail' : 'View Details'}</span>
+                  <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300 relative" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
@@ -202,7 +208,7 @@ export default function CaseStudies() {
                 ? 'Explorez mes réalisations en direct. Cliquez pour voir les projets fonctionnels.' 
                 : 'Explore my live work. Click to see functional projects in action.'}
             </p>
-            <div className="w-12 h-1 bg-gradient-to-r from-accent to-primary rounded-full mx-auto mt-6"></div>
+            <div className="w-12 h-1 bg-primary rounded-full mx-auto mt-6"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -238,10 +244,13 @@ export default function CaseStudies() {
             ].map((project, i) => (
               <div
                 key={i}
-                className="group rounded-xl border border-border bg-white hover:border-primary/50 transition-all duration-300 cursor-pointer animate-fade-in-up hover:shadow-lg hover:shadow-primary/10"
-                style={{ animationDelay: `${i * 0.1}s` }}
+                className={`group rounded-xl border border-border bg-white hover:border-primary/50 transition-all duration-300 cursor-pointer animate-fade-in-up hover:shadow-lg hover:shadow-primary/10 hover:lift relative overflow-hidden ${
+                  i === 0 ? 'stagger-1' : i === 1 ? 'stagger-2' : 'stagger-3'
+                }`}
                 onClick={() => setSelectedLiveProject(project)}
               >
+                {/* Animated Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                 {/* Preview Image */}
                 <div className="relative h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-t-lg overflow-hidden">
                   <div className="absolute inset-0 flex items-center justify-center">

@@ -17,14 +17,14 @@ export default function Identity() {
           <div className="relative order-2 md:order-1 animate-slide-in-left">
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 via-accent/10 to-primary/10 border border-border p-2 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 overflow-hidden">
               <img 
-                src="/profile-photo.jpg" 
-                alt="Profile Photo" 
+                src="/sahab-office.jpg" 
+                alt="Sahab Youssef in modern office with city view" 
                 className="w-full h-full rounded-xl object-cover"
               />
             </div>
             
             {/* CV Download Button */}
-            <div className="mt-6 text-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <div className="mt-6 text-center animate-fade-in-up stagger-3">
               <p className="text-sm text-muted-foreground mb-4 font-medium">
                 {language === 'fr' 
                   ? 'Découvrez mon parcours et mes réalisations'
@@ -65,10 +65,9 @@ export default function Identity() {
           <div className="order-1 md:order-2 animate-slide-in-right">
             <div className="mb-6">
               <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
-                {language === 'fr' ? 'Bonjour, je suis' : 'Hi, I\'m'} <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{t.identity.name}</span>
+                {language === 'fr' ? 'Bonjour, je suis' : 'Hi, I\'m'} <span className="text-primary">{t.identity.name}</span>
               </h2>
               <p className="text-lg font-semibold text-primary mb-4">{t.identity.tagline}</p>
-              <div className="w-12 h-1 bg-gradient-to-r from-primary to-accent rounded-full mb-4"></div>
             </div>
 
             <div className="space-y-6">

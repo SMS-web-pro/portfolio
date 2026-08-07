@@ -58,7 +58,7 @@ export default function Services() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
             {t.services.description}
           </p>
-          <div className="w-12 h-1 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mt-6"></div>
+          <div className="w-12 h-1 bg-primary rounded-full mx-auto mt-6"></div>
         </div>
 
         {/* Services Grid */}
@@ -66,33 +66,47 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group p-8 rounded-xl border border-border bg-white hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 cursor-pointer animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`group p-8 rounded-xl border border-border bg-white hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 cursor-pointer animate-fade-in-up hover:lift relative overflow-hidden ${
+                index === 0 ? 'stagger-1' : index === 1 ? 'stagger-2' : 'stagger-3'
+              }`}
             >
-              {/* Icon */}
-              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                {service.icon}
-              </div>
-
+              {/* Animated Background Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              
               {/* Content */}
-              <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground mb-5 leading-relaxed">
-                {service.description}
-              </p>
+              <div className="relative">
+                {/* Icon with Animation */}
+                <div className="text-5xl mb-4 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300 inline-block">
+                  {service.icon}
+                </div>
 
-              {/* Features */}
-              <div className="space-y-2">
-                {service.features.map((feature, i) => (
-                  <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-primary transition-colors">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent group-hover:bg-primary transition-colors"></span>
-                    {feature}
-                  </div>
-                ))}
+                {/* Title */}
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-muted-foreground mb-5 leading-relaxed">
+                  {service.description}
+                </p>
+
+                {/* Features with Stagger */}
+                <div className="space-y-2">
+                  {service.features.map((feature, i) => (
+                    <div 
+                      key={i} 
+                      className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-primary transition-all duration-300 transform group-hover:translate-x-1"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent group-hover:bg-primary transition-all duration-300 group-hover:scale-150"></span>
+                      {feature}
+                    </div>
+                  ))}
+                </div>
               </div>
 
-                          </div>
+              {/* Animated Border Glow on Hover */}
+              <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-primary/30 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none animate-glow"></div>
+            </div>
           ))}
         </div>
       </div>

@@ -62,19 +62,25 @@ export default function Stack() {
           {stackCategories.map((category, index) => (
             <div
               key={index}
-              className={`p-8 rounded-xl border border-border bg-gradient-to-br ${category.color} hover:border-primary/50 transition-all duration-300 animate-fade-in-up`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`p-8 rounded-xl border border-border bg-gradient-to-br ${category.color} hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 animate-fade-in-up group hover:lift relative overflow-hidden ${
+                index === 0 ? 'stagger-1' : index === 1 ? 'stagger-2' : 'stagger-3'
+              }`}
             >
-              <h3 className="text-lg font-bold text-foreground mb-6">{category.title}</h3>
-              <div className="flex flex-wrap gap-2">
-                {category.items.map((item, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1.5 bg-white border border-border rounded-full text-sm font-medium text-foreground hover:border-primary hover:text-primary transition-all duration-300 cursor-pointer"
-                  >
-                    {item}
-                  </span>
-                ))}
+              {/* Animated Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-xl"></div>
+              
+              <div className="relative">
+                <h3 className="text-lg font-bold text-foreground mb-6 group-hover:text-primary transition-colors">{category.title}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {category.items.map((item, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1.5 bg-white border border-border rounded-full text-sm font-medium text-foreground hover:border-primary hover:text-primary hover:shadow-md hover:shadow-primary/20 hover:scale-110 transition-all duration-300 cursor-pointer hover:bg-primary hover:text-white"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -90,20 +96,26 @@ export default function Stack() {
           ].map((stat, i) => (
             <div
               key={i}
-              className="p-6 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 text-center group hover:border-primary/50 transition-all duration-300 animate-scale-in"
-              style={{ animationDelay: `${i * 0.1}s` }}
+              className={`p-6 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 text-center group hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 animate-scale-in hover:lift relative overflow-hidden ${
+                i === 0 ? 'stagger-1' : i === 1 ? 'stagger-2' : i === 2 ? 'stagger-3' : 'stagger-4'
+              }`}
             >
-              <div className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">
-                {stat.number.includes('±') ? (
-                  <>
-                    <span className="text-4xl">{stat.number.split('±')[0]}</span>
-                    <span className="text-sm ml-1">± 5%</span>
-                  </>
-                ) : (
-                  stat.number
-                )}
+              {/* Animated Background */}
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              
+              <div className="relative">
+                <div className="text-4xl font-bold text-primary mb-2 group-hover:scale-125 group-hover:animate-bounce-delayed transition-transform">
+                  {stat.number.includes('±') ? (
+                    <>
+                      <span className="text-4xl">{stat.number.split('±')[0]}</span>
+                      <span className="text-sm ml-1">± 5%</span>
+                    </>
+                  ) : (
+                    stat.number
+                  )}
+                </div>
+                <p className="text-muted-foreground text-sm group-hover:text-primary/70 transition-colors">{stat.label}</p>
               </div>
-              <p className="text-muted-foreground text-sm">{stat.label}</p>
             </div>
           ))}
         </div>

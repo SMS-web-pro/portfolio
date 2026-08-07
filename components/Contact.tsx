@@ -85,7 +85,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-secondary/20">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
@@ -100,7 +100,7 @@ export default function Contact() {
         {/* Contact Options */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {[
-            { icon: '📧', label: language === 'fr' ? 'Email' : 'Email', value: 'sahabyoussef@gmail.com', link: 'mailto:sahabyoussef@gmail.com' },
+            { icon: '📧', label: language === 'fr' ? 'Email' : 'Email', value: 'contact@siteupservices.online', link: 'mailto:contact@siteupservices.online' },
             { icon: '💬', label: t.contact.options.whatsapp, value: '+212 644 627826', link: 'https://wa.me/212644627826' },
             { icon: '📞', label: language === 'fr' ? 'Téléphone' : 'Phone', value: '+212 751 134318', link: 'tel:+212751134318' },
           ].map((option, i) => (
@@ -109,12 +109,13 @@ export default function Contact() {
               href={option.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-6 rounded-xl border border-border bg-white text-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group animate-fade-in-up cursor-pointer"
-              style={{ animationDelay: `${i * 0.1}s` }}
+              className={`min-w-0 p-6 rounded-xl border border-border bg-white text-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group animate-fade-in-up cursor-pointer ${
+                i === 0 ? 'stagger-1' : i === 1 ? 'stagger-2' : 'stagger-3'
+              }`}
             >
               <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">{option.icon}</div>
               <p className="text-sm text-muted-foreground mb-1">{option.label}</p>
-              <p className="text-lg font-semibold text-primary group-hover:text-primary">{option.value}</p>
+              <p className="whitespace-nowrap text-base sm:text-lg font-semibold text-primary group-hover:text-primary">{option.value}</p>
             </a>
           ))}
         </div>

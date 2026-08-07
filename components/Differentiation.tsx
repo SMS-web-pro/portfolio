@@ -25,45 +25,51 @@ export default function Differentiation() {
         {/* Comparison Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           {/* Left: Traditional Dev */}
-          <div className="p-8 rounded-xl border-2 border-gray-300 bg-white animate-slide-in-left">
-            <h3 className="text-2xl font-bold text-foreground mb-6">
-              {language === 'fr' ? 'Développeur Classique' : 'Traditional Developer'}
-            </h3>
-            <ul className="space-y-3">
-              {[
-                { icon: '✗', text: language === 'fr' ? 'Fait ce qu\'on lui demande exactement' : 'Does exactly what you ask' },
-                { icon: '✗', text: language === 'fr' ? 'SEO/Performance? À voir après...' : 'SEO/Performance? We\'ll see later...' },
-                { icon: '✗', text: language === 'fr' ? 'Peut partir à la fin du projet' : 'May leave after project ends' },
-                { icon: '✗', text: language === 'fr' ? 'Code surtout compris par lui' : 'Code only understood by them' },
-                { icon: '✗', text: language === 'fr' ? 'Suivre les tendances, rarement.' : 'Rarely follows trends.' },
-              ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-muted-foreground">
-                  <span className="text-lg text-red-500">{item.icon}</span>
-                  {item.text}
-                </li>
-              ))}
-            </ul>
+          <div className="p-8 rounded-xl border-2 border-gray-300 bg-white animate-slide-in-left hover:lift transition-all duration-300 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-br from-red-50/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <div className="relative">
+              <h3 className="text-2xl font-bold text-foreground mb-6">
+                {language === 'fr' ? 'Développeur Classique' : 'Traditional Developer'}
+              </h3>
+              <ul className="space-y-3">
+                {[
+                  { icon: '✗', text: language === 'fr' ? 'Fait ce qu\'on lui demande exactement' : 'Does exactly what you ask' },
+                  { icon: '✗', text: language === 'fr' ? 'SEO/Performance? À voir après...' : 'SEO/Performance? We\'ll see later...' },
+                  { icon: '✗', text: language === 'fr' ? 'Peut partir à la fin du projet' : 'May leave after project ends' },
+                  { icon: '✗', text: language === 'fr' ? 'Code surtout compris par lui' : 'Code only understood by them' },
+                  { icon: '✗', text: language === 'fr' ? 'Suivre les tendances, rarement.' : 'Rarely follows trends.' },
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-muted-foreground group-hover:translate-x-2 transition-transform duration-300">
+                    <span className="text-lg text-red-500">{item.icon}</span>
+                    {item.text}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Right: Sahab - Consultant Developer */}
-          <div className="p-8 rounded-xl border-2 border-primary bg-gradient-to-br from-primary/10 to-accent/10 animate-slide-in-right group hover:border-primary hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">
-            <h3 className="text-2xl font-bold text-primary mb-6 group-hover:text-primary transition-colors">
-              🚀 {language === 'fr' ? 'Sahab - Consultant Developer' : 'Sahab - Consultant Developer'}
-            </h3>
-            <ul className="space-y-3">
-              {[
-                { icon: '✓', text: language === 'fr' ? 'Pense en businessperson d\'abord' : 'Thinks like a businessperson first' },
-                { icon: '✓', text: language === 'fr' ? 'SEO & Performance intégrés dès le start' : 'SEO & Performance built-in from day 1' },
-                { icon: '✓', text: language === 'fr' ? 'Support & croissance continue' : 'Continuous support & growth' },
-                { icon: '✓', text: language === 'fr' ? 'Code lisible, documenté, maintenable' : 'Clean, documented, maintainable code' },
-                { icon: '✓', text: language === 'fr' ? 'Toujours apprendre, latest tech' : 'Always learning, latest tech stack' },
-              ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-foreground font-medium">
-                  <span className="text-lg text-accent">{item.icon}</span>
-                  {item.text}
-                </li>
-              ))}
-            </ul>
+          <div className="p-8 rounded-xl border-2 border-primary bg-gradient-to-br from-primary/10 to-accent/10 animate-slide-in-right group hover:border-primary hover:shadow-xl hover:shadow-primary/30 hover:scale-105 transition-all duration-300 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 opacity-0 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none animate-pulse"></div>
+            <div className="relative">
+              <h3 className="text-2xl font-bold text-primary mb-6 group-hover:text-primary transition-colors">
+                🚀 {language === 'fr' ? 'Sahab - Consultant Developer' : 'Sahab - Consultant Developer'}
+              </h3>
+              <ul className="space-y-3">
+                {[
+                  { icon: '✓', text: language === 'fr' ? 'Pense en businessperson d\'abord' : 'Thinks like a businessperson first' },
+                  { icon: '✓', text: language === 'fr' ? 'SEO & Performance intégrés dès le start' : 'SEO & Performance built-in from day 1' },
+                  { icon: '✓', text: language === 'fr' ? 'Support & croissance continue' : 'Continuous support & growth' },
+                  { icon: '✓', text: language === 'fr' ? 'Code lisible, documenté, maintenable' : 'Clean, documented, maintainable code' },
+                  { icon: '✓', text: language === 'fr' ? 'Toujours apprendre, latest tech' : 'Always learning, latest tech stack' },
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-foreground font-medium group-hover:translate-x-2 transition-transform duration-300">
+                    <span className="text-lg text-accent group-hover:scale-150 transition-transform duration-300">{item.icon}</span>
+                    {item.text}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -103,16 +109,20 @@ export default function Differentiation() {
           ].map((item, i) => (
             <div
               key={i}
-              className="p-6 rounded-xl border border-border bg-white hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group animate-fade-in-up"
-              style={{ animationDelay: `${i * 0.1}s` }}
+              className={`p-6 rounded-xl border border-border bg-white hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 group animate-fade-in-up hover:lift relative overflow-hidden ${
+                i === 0 ? 'stagger-1' : i === 1 ? 'stagger-2' : i === 2 ? 'stagger-3' : i === 3 ? 'stagger-4' : 'stagger-5'
+              }`}
             >
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{item.icon}</div>
-              <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                {item.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {item.description}
-              </p>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              <div className="relative">
+                <div className="text-4xl mb-4 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300 inline-block">{item.icon}</div>
+                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground transition-colors">
+                  {item.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

@@ -81,7 +81,7 @@ function MentionsLegalesContent() {
                 <p className="font-semibold text-foreground">
                   {language === 'fr' ? 'Email :' : 'Email:'}
                 </p>
-                <p className="text-muted-foreground">sahabyoussef@gmail.com</p>
+                <p className="text-muted-foreground">contact@siteupservices.online</p>
               </div>
             </div>
           </section>
@@ -230,7 +230,7 @@ function MentionsLegalesContent() {
                 {language === 'fr' ? 'Pour toute question juridique :' : 'For any legal question:'}
               </p>
               <div className="mt-4 p-4 bg-primary/10 rounded-lg border border-primary/20">
-                <p className="font-semibold text-primary">📧 sahabyoussef@gmail.com</p>
+                <p className="font-semibold text-primary">📧 contact@siteupservices.online</p>
                 <p className="font-semibold text-primary mt-2">📞 +212 751 134318</p>
                 <p className="font-semibold text-primary mt-2">
                   {language === 'fr' ? '📍 Maroc, Casablanca' : '📍 Morocco, Casablanca'}
