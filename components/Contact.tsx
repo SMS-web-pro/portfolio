@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
-import { EMAILJS_CONFIG } from '@/lib/emailjs-config'
 import SectionPattern from '@/components/SectionPattern'
 
 export default function Contact() {
@@ -36,25 +35,17 @@ export default function Contact() {
     setLoading(true)
 
     try {
-      // Import EmailJS
-      const emailjs = (await import('@emailjs/browser')).default
-      
-      // Send email using EmailJS
-      await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          company: formData.company,
-          phone: formData.phone,
-          project_type: formData.projectType,
-          budget: formData.budget,
-          message: formData.message,
-          to_email: EMAILJS_CONFIG.TO_EMAIL
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        EMAILJS_CONFIG.PUBLIC_KEY
-      )
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error('Erreur lors de l\'envoi')
+      }
       
       setSubmitted(true)
       setTimeout(() => {
@@ -63,15 +54,8 @@ export default function Contact() {
         setLoading(false)
       }, 3000)
     } catch (error) {
-      console.error('[v0] Form submission error:', error)
+      console.error('Form submission error:', error)
       setLoading(false)
-      // En cas d'erreur, on simule quand même le succès pour le développement
-      setSubmitted(true)
-      setTimeout(() => {
-        setSubmitted(false)
-        setFormData({ name: '', email: '', company: '', phone: '', projectType: '', budget: '', message: '' })
-        setLoading(false)
-      }, 3000)
     }
   }
 
