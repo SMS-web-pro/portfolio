@@ -30,7 +30,7 @@ export default function BackToTop() {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 group animate-fade-in-up"
+          className="fixed bottom-6 right-6 z-40 group animate-fade-in-up"
           aria-label="Back to top"
         >
           <div className="relative">

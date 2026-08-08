@@ -10,7 +10,7 @@ export const EMAILJS_CONFIG = {
   SERVICE_ID: 'service_25sve4s', // Votre Service ID
   TEMPLATE_ID: 'template_cl390gb', // Votre Template ID  
   PUBLIC_KEY: 'qBNByPU_o-2TgRz6c', // Votre Public Key
-  TO_EMAIL: 'contact@siteupservices.online' // Votre email de destination
+  TO_EMAIL: 'contact@gosite.digital' // Votre email de destination
 }
 
 // Template suggéré pour EmailJS:

@@ -3,6 +3,7 @@
 import React from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
+import SectionPattern from '@/components/SectionPattern'
 
 export default function Methodology() {
   const { language } = useLanguage()
@@ -12,110 +13,100 @@ export default function Methodology() {
     {
       number: '01',
       title: language === 'fr' ? 'Discovery & Stratégie' : 'Discovery & Strategy',
-      description: language === 'fr' ? 'Audit complet de votre situation actuelle. Compréhension de vos objectifs business et de votre audience.' : 'Complete audit of your current situation. Understanding your business goals and audience.',
-      icon: '🔍',
-      details: language === 'fr' ? ['Audit digital', 'Analyse concurrence', 'Objectifs clairs'] : ['Digital Audit', 'Competitor Analysis', 'Clear Goals']
+      description: language === 'fr' 
+        ? 'Audit complet de votre écosystème digital. Analyse de la concurrence, de votre audience cible et de vos objectifs business. Définition des KPIs et roadmap stratégique pour maximiser votre ROI.' 
+        : 'Complete audit of your digital ecosystem. Competitor analysis, target audience study, and business objectives. KPI definition and strategic roadmap to maximize your ROI.',
+      details: language === 'fr' ? ['Audit SEO & technique', 'Analyse concurrentielle', 'Persona & user journeys', 'KPIs & objectifs mesurables'] : ['SEO & Technical Audit', 'Competitor Analysis', 'Persona & User Journeys', 'KPIs & Measurable Goals'],
     },
     {
       number: '02',
       title: language === 'fr' ? 'Planning & Design' : 'Planning & Design',
-      description: language === 'fr' ? 'Création d\'une roadmap détaillée. Design & UX pensés pour convertir, pas juste pour plaire.' : 'Detailed roadmap creation. Design & UX built to convert, not just please.',
-      icon: '📐',
-      details: language === 'fr' ? ['Wireframing', 'Design system', 'User journeys'] : ['Wireframing', 'Design System', 'User Journeys']
+      description: language === 'fr' 
+        ? 'Création d\'une architecture technique robuste. Design UI/UX orienté conversion avec wireframes, prototypes interactifs et design system cohérent.' 
+        : 'Robust technical architecture creation. Conversion-focused UI/UX design with wireframes, interactive prototypes, and cohesive design system.',
+      details: language === 'fr' ? ['Architecture technique', 'Wireframes & prototypes', 'Design system', 'UI/UX optimisé conversion'] : ['Technical Architecture', 'Wireframes & Prototypes', 'Design System', 'Conversion-Optimized UI/UX'],
     },
     {
       number: '03',
       title: language === 'fr' ? 'Development Premium' : 'Premium Development',
-      description: language === 'fr' ? 'Code production-ready. Performance, sécurité, et SEO intégrés dès le départ, pas en afterthought.' : 'Production-ready code. Performance, security, and SEO built-in from the start.',
-      icon: '⚙️',
-      details: language === 'fr' ? ['Clean code', '100/100 Lighthouse', 'Sécurité'] : ['Clean Code', '100/100 Lighthouse', 'Security']
+      description: language === 'fr' 
+        ? 'Développement avec les meilleures pratiques industry. Code propre, maintenable et documenté. Intégration SEO, performance et sécurité dès la première ligne de code.' 
+        : 'Development with industry best practices. Clean, maintainable, documented code. SEO, performance, and security integration from the first line of code.',
+      details: language === 'fr' ? ['Clean code & documentation', '100/100 Lighthouse', 'Sécurité renforcée', 'CI/CD & Git workflow'] : ['Clean Code & Documentation', '100/100 Lighthouse', 'Enhanced Security', 'CI/CD & Git Workflow'],
     },
     {
       number: '04',
       title: language === 'fr' ? 'Testing & Optimization' : 'Testing & Optimization',
-      description: language === 'fr' ? 'Tests exhaustifs sur tous les appareils. Optimisations performance et conversion continus.' : 'Exhaustive testing across all devices. Continuous performance and conversion optimization.',
-      icon: '🧪',
-      details: language === 'fr' ? ['QA rigoureuse', 'A/B testing', 'Performance'] : ['Rigorous QA', 'A/B Testing', 'Performance']
+      description: language === 'fr' 
+        ? 'Tests rigoureux sur tous les appareils et navigateurs. Optimisation des performances, accessibilité WCAG et tests A/B pour maximiser les conversions.' 
+        : 'Rigorous testing across all devices and browsers. Performance optimization, WCAG accessibility, and A/B testing to maximize conversions.',
+      details: language === 'fr' ? ['Tests multi-navigateurs', 'Optimisation vitesse', 'Accessibilité WCAG', 'A/B testing & analytics'] : ['Cross-Browser Testing', 'Speed Optimization', 'WCAG Accessibility', 'A/B Testing & Analytics'],
     },
     {
       number: '05',
       title: language === 'fr' ? 'Launch & Monitoring' : 'Launch & Monitoring',
-      description: language === 'fr' ? 'Déploiement smooth. Monitoring en temps réel des performances et des conversions post-launch.' : 'Smooth deployment. Real-time monitoring of performance and conversions post-launch.',
-      icon: '🚀',
-      details: language === 'fr' ? ['Zero-downtime deploy', 'Analytics setup', 'Monitoring'] : ['Zero-Downtime Deploy', 'Analytics Setup', 'Monitoring']
+      description: language === 'fr' 
+        ? 'Déploiement zéro downtime avec monitoring en temps réel. Configuration des analytics, tracking des conversions et alertes performance.' 
+        : 'Zero downtime deployment with real-time monitoring. Analytics setup, conversion tracking, and performance alerts.',
+      details: language === 'fr' ? ['Déploiement zero-downtime', 'Analytics & tracking', 'Monitoring temps réel', 'Alertes performance'] : ['Zero-Downtime Deploy', 'Analytics & Tracking', 'Real-Time Monitoring', 'Performance Alerts'],
     },
     {
       number: '06',
       title: language === 'fr' ? 'Support & Growth' : 'Support & Growth',
-      description: language === 'fr' ? 'Support continu. Optimisations basées sur les données réelles. Scaling préparé d\'avance.' : 'Continuous support. Real-data based optimizations. Pre-planned scaling.',
-      icon: '📈',
-      details: language === 'fr' ? ['Support SLA', 'Growth hacking', 'Scaling'] : ['Support SLA', 'Growth Hacking', 'Scaling']
+      description: language === 'fr' 
+        ? 'Support continu et optimisations basées sur les données réelles. Évolutions fonctionnelles, scaling infrastructure et growth hacking pour accélérer votre croissance.' 
+        : 'Continuous support and data-driven optimizations. Functional evolutions, infrastructure scaling, and growth hacking to accelerate your growth.',
+      details: language === 'fr' ? ['Support SLA garanti', 'Évolutions fonctionnelles', 'Scaling infrastructure', 'Growth hacking data-driven'] : ['Guaranteed SLA Support', 'Functional Evolutions', 'Infrastructure Scaling', 'Data-Driven Growth Hacking'],
     },
   ]
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#f1f5f9] relative overflow-hidden">
+      <SectionPattern variant="methodology" />
       <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
+        <div className="text-center mb-16">
+          <p className="text-sm font-semibold text-[#0047ab] uppercase tracking-[0.2em] mb-3">{language === 'fr' ? 'Méthodologie' : 'Methodology'}</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#0f1419] mb-4 text-balance font-heading">
             {language === 'fr' ? 'Ma Méthode de Travail' : 'My Methodology'}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <p className="text-lg text-[#6b7280] max-w-2xl mx-auto text-pretty">
             {t.methodology.description}
           </p>
-          <div className="w-12 h-1 bg-primary rounded-full mx-auto mt-6"></div>
+          <div className="w-12 h-0.5 bg-[#0047ab] mx-auto mt-6"></div>
         </div>
 
-        {/* Timeline Steps */}
         <div className="space-y-6 mb-16">
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`group relative animate-fade-in-up ${
-                index === 0 ? 'stagger-1' : index === 1 ? 'stagger-2' : index === 2 ? 'stagger-3' : 'stagger-4'
-              }`}
+              className="group relative"
             >
-              {/* Connector Line */}
               {index < steps.length - 1 && (
-                <div className="absolute left-8 top-24 w-1 h-12 bg-gradient-to-b from-primary to-transparent md:block hidden"></div>
+                <div className="absolute left-8 top-24 w-0.5 h-12 bg-[#0047ab]/20 md:block hidden"></div>
               )}
 
               <div className="flex gap-6 md:gap-8">
-                {/* Step Number Circle */}
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-xl group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300 relative z-10 group-hover:animate-glow shadow-lg shadow-primary/30">
-                  {step.icon}
+                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-[#0047ab] flex items-center justify-center text-white font-bold text-lg relative z-10">
+                  {step.number}
                 </div>
 
-                {/* Content */}
                 <div className="pt-2 flex-1 pb-8">
-                  <div className="p-6 rounded-xl border border-border bg-gradient-to-br from-white to-secondary/20 group-hover:border-primary/50 group-hover:shadow-lg group-hover:shadow-primary/20 group-hover:lift transition-all duration-300 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-                    <div className="relative">
-                      <div className="flex items-start justify-between mb-3">
-                        <div>
-                          <div className="text-sm font-bold text-primary mb-1 group-hover:scale-110 transition-transform">Étape {step.number}</div>
-                          <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                            {step.title}
-                          </h3>
-                        </div>
-                      </div>
-
-                      <p className="text-muted-foreground mb-4 leading-relaxed group-hover:text-foreground transition-colors">
-                        {step.description}
-                      </p>
-
-                      {/* Details */}
-                      <div className="flex flex-wrap gap-2">
-                        {step.details.map((detail, i) => (
-                          <span
-                            key={i}
-                            className="px-3 py-1.5 rounded-full text-xs font-medium bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 hover:scale-110 transform"
-                          >
-                            ✓ {detail}
-                          </span>
-                        ))}
-                      </div>
+                  <div className="p-6 rounded-xl border border-[#e5e7eb] bg-white hover:border-[#0047ab]/30 hover:shadow-lg transition-all duration-300">
+                    <h3 className="text-xl font-bold text-[#0f1419] mb-3 font-heading">
+                      {step.title}
+                    </h3>
+                    <p className="text-[#6b7280] leading-relaxed text-sm mb-4">
+                      {step.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {step.details.map((detail, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1.5 rounded-full text-xs font-medium bg-[#f0f9ff] text-[#0047ab] border border-[#0047ab]/10"
+                        >
+                          {detail}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>

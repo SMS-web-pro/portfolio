@@ -3,6 +3,8 @@
 import React, { useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
+import SectionPattern from '@/components/SectionPattern'
+import { Award, Briefcase, CheckCircle } from 'lucide-react'
 
 export default function Identity() {
   const { language } = useLanguage()
@@ -10,7 +12,8 @@ export default function Identity() {
   const [showCvModal, setShowCvModal] = useState(false)
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <SectionPattern variant="identity" />
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Left: Profile Image Placeholder */}
@@ -18,7 +21,7 @@ export default function Identity() {
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 via-accent/10 to-primary/10 border border-border p-2 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 overflow-hidden">
               <img 
                 src="/sahab-office.jpg" 
-                alt="Sahab Youssef in modern office with city view" 
+                alt="GoSite in modern office with city view" 
                 className="w-full h-full rounded-xl object-cover"
               />
             </div>
@@ -65,54 +68,52 @@ export default function Identity() {
           <div className="order-1 md:order-2 animate-slide-in-right">
             <div className="mb-6">
               <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
-                {language === 'fr' ? 'Bonjour, je suis' : 'Hi, I\'m'} <span className="text-primary">{t.identity.name}</span>
+                {language === 'fr' ? 'Bonjour, je suis' : 'Hi, I\'m'} <span className="text-primary">Sahab Youssef</span>
               </h2>
-              <p className="text-lg font-semibold text-primary mb-4">{t.identity.tagline}</p>
+              <p className="text-base sm:text-lg font-semibold text-primary mb-4 tracking-wide">{t.identity.tagline}</p>
             </div>
 
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
-                {language === 'fr'
-                  ? `Je suis un développeur spécialisé en WordPress, React et SEO. Depuis plus de 7 ans, j'aide des entreprises et des consultants à transformer leurs ambitions digitales en réalité.`
-                  : `I'm a developer specialized in WordPress, React and SEO. For over 7 years, I've been helping businesses and consultants turn their digital ambitions into reality.`}
+                {t.identity.intro}
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
                 {language === 'fr'
-                  ? `Mon expertise couvre la construction de sites web performants, l'optimisation SEO avancée, l'automatisation intelligente des processus et l'intégration d'IA pour booster vos conversions.`
-                  : `My expertise covers building high-performance websites, advanced SEO optimization, smart process automation and AI integration to boost your conversions.`}
+                  ? 'Mon expertise couvre la création de sites web performants, l\'optimisation du référencement naturel, l\'automatisation des processus et l\'intégration d\'intelligence artificielle pour améliorer vos conversions.'
+                  : 'My expertise covers building high-performance websites, search engine optimization, process automation and artificial intelligence integration to improve your conversions.'}
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
                 {language === 'fr'
-                  ? `Je combine technique rigoureuse et stratégie commerciale pour créer des solutions qui ne sont pas seulement belles, mais surtout rentables.`
-                  : `I combine rigorous technique and commercial strategy to create solutions that aren't just beautiful, but above all profitable.`}
+                  ? 'Je combine rigueur technique et vision stratégique pour créer des solutions qui ne sont pas seulement esthétiques, mais surtout rentables.'
+                  : 'I combine technical rigor with strategic vision to create solutions that are not only aesthetic, but above all profitable.'}
               </p>
 
               {/* Key Values */}
               <div className="pt-4 space-y-3">
                 <div className="flex items-start gap-3 group">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all mt-1">
-                    ✓
+                  <div className="w-8 h-8 rounded-lg bg-[#0047ab]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0047ab] transition-all mt-0.5">
+                    <Award className="w-4 h-4 text-[#0047ab] group-hover:text-white transition-colors" />
                   </div>
-                  <span className="text-foreground group-hover:text-primary transition-colors">
-                    <strong>Premium</strong>: Solutions haut de gamme, jamais de compromis
+                  <span className="text-[#0f1419] group-hover:text-[#0047ab] transition-colors">
+                    {language === 'fr' ? <><strong>Premium</strong> : Solutions haut de gamme, jamais de compromis</> : <><strong>Premium</strong>: High-end solutions, never compromising</>}
                   </span>
                 </div>
                 <div className="flex items-start gap-3 group">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all mt-1">
-                    ✓
+                  <div className="w-8 h-8 rounded-lg bg-[#0047ab]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0047ab] transition-all mt-0.5">
+                    <Briefcase className="w-4 h-4 text-[#0047ab] group-hover:text-white transition-colors" />
                   </div>
-                  <span className="text-foreground group-hover:text-primary transition-colors">
-                    <strong>Consultant</strong>: Je pense comme un business person, pas seulement comme un dev
+                  <span className="text-[#0f1419] group-hover:text-[#0047ab] transition-colors">
+                    {language === 'fr' ? <><strong>Consultant</strong> : Je pense business, pas juste technique</> : <><strong>Consultant</strong>: I think business, not just code</>}
                   </span>
                 </div>
                 <div className="flex items-start gap-3 group">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all mt-1">
-                    ✓
+                  <div className="w-8 h-8 rounded-lg bg-[#0047ab]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0047ab] transition-all mt-0.5">
+                    <CheckCircle className="w-4 h-4 text-[#0047ab] group-hover:text-white transition-colors" />
                   </div>
-                  <span className="text-foreground group-hover:text-primary transition-colors">
-                    <strong>Autonome</strong>: Capable de gérer un projet de A à Z
+                  <span className="text-[#0f1419] group-hover:text-[#0047ab] transition-colors">
+                    {language === 'fr' ? <><strong>Autonome</strong> : Capable de gérer un projet de A à Z</> : <><strong>Autonomous</strong>: Capable of managing a project end to end</>}
                   </span>
                 </div>
               </div>
@@ -128,7 +129,7 @@ export default function Identity() {
             {/* Modal Header */}
             <div className="flex items-center justify-between p-6 border-b border-border">
               <h3 className="text-xl font-semibold text-foreground">
-                {language === 'fr' ? 'CV - Sahab Youssef' : 'CV - Sahab Youssef'}
+                {language === 'fr' ? 'CV - GoSite' : 'CV - GoSite'}
               </h3>
               <button
                 onClick={() => setShowCvModal(false)}
@@ -145,7 +146,7 @@ export default function Identity() {
               <iframe
                 src="https://drive.google.com/file/d/1DCz4fWs0T47J9OKW3-gEVTe9X_sjQa3S/preview?usp=sharing"
                 className="w-full h-full border-0"
-                title="CV - Sahab Youssef"
+                title="CV - GoSite"
                 loading="lazy"
                 onLoad={() => {
                   const loader = document.getElementById('cv-iframe-loader');

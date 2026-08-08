@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
 import ProjectModal from './ProjectModal'
+import SectionPattern from '@/components/SectionPattern'
 
 export default function CaseStudies() {
   const { language } = useLanguage()
@@ -94,7 +95,8 @@ export default function CaseStudies() {
   }
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-secondary/20 to-white">
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <SectionPattern variant="projects" />
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">

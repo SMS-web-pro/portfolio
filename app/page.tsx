@@ -12,6 +12,7 @@ import Methodology from '@/components/Methodology'
 import Differentiation from '@/components/Differentiation'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import FloatingContact from '@/components/FloatingContact'
 
 function HomeContent() {
   const [scrollY, setScrollY] = useState(0)
@@ -34,6 +35,7 @@ function HomeContent() {
       <Differentiation />
       <Contact />
       <Footer />
+      <FloatingContact />
     </main>
   )
 }

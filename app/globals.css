@@ -16,7 +16,7 @@
   --secondary-foreground: #0047ab;
   --muted: #d1d5db;
   --muted-foreground: #6b7280;
-  --accent: #00b4d8;
+  --accent: #000000;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
@@ -24,7 +24,7 @@
   --input: #ffffff;
   --ring: #0047ab;
   --chart-1: #0047ab;
-  --chart-2: #00b4d8;
+  --chart-2: #000000;
   --chart-3: #06d6a0;
   --chart-4: #118ab2;
   --chart-5: #073b4c;
@@ -33,7 +33,7 @@
   --sidebar-foreground: #0f1419;
   --sidebar-primary: #0047ab;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #00b4d8;
+  --sidebar-accent: #000000;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #e5e7eb;
   --sidebar-ring: #0047ab;
@@ -46,10 +46,10 @@
   --card-foreground: #f5f6f8;
   --popover: #1a1f2e;
   --popover-foreground: #f5f6f8;
-  --primary: #00b4d8;
+  --primary: #000000;
   --primary-foreground: #0f1419;
   --secondary: #1a3a52;
-  --secondary-foreground: #00b4d8;
+  --secondary-foreground: #000000;
   --muted: #374151;
   --muted-foreground: #9ca3af;
   --accent: #06d6a0;
@@ -58,24 +58,25 @@
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: #2d3748;
   --input: #1a1f2e;
-  --ring: #00b4d8;
-  --chart-1: #00b4d8;
+  --ring: #000000;
+  --chart-1: #000000;
   --chart-2: #06d6a0;
   --chart-3: #118ab2;
   --chart-4: #073b4c;
   --chart-5: #0047ab;
   --sidebar: #1a1f2e;
   --sidebar-foreground: #f5f6f8;
-  --sidebar-primary: #00b4d8;
+  --sidebar-primary: #000000;
   --sidebar-primary-foreground: #0f1419;
   --sidebar-accent: #06d6a0;
   --sidebar-accent-foreground: #0f1419;
   --sidebar-border: #2d3748;
-  --sidebar-ring: #00b4d8;
+  --sidebar-ring: #000000;
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Inter Fallback';
+  --font-sans: 'Source Sans 3', 'Source Sans 3 Fallback';
+  --font-heading: 'Playfair Display', 'Playfair Display Fallback';
   --font-mono: 'IBM Plex Mono', 'IBM Plex Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -122,9 +123,16 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
 }
 
 @layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
   /* Animations avancées */
   @keyframes fadeInUp {
     from {
@@ -418,4 +426,32 @@
   .stagger-3 { animation-delay: 0.3s; }
   .stagger-4 { animation-delay: 0.4s; }
   .stagger-5 { animation-delay: 0.5s; }
+
+  /* Marquee animation */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-\[marquee_30s_linear_infinite\] {
+    animation: marquee 30s linear infinite;
+  }
+
+  .pause:hover {
+    animation-play-state: paused;
+  }
+
+  /* Wave animation */
+  @keyframes wave {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }

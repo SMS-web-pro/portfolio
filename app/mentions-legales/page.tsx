@@ -5,26 +5,18 @@ import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
 import Link from 'next/link'
 import { LanguageProvider } from '@/context/LanguageContext'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 function MentionsLegalesContent() {
   const { language } = useLanguage()
   const t = translations[language]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-secondary/20">
-      {/* Simple Header */}
-      <header className="border-b border-border bg-white/50 backdrop-blur-sm sticky top-0 z-40">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">SY</span>
-            </div>
-            <span className="font-semibold text-primary">Sahab Youssef</span>
-          </Link>
-        </div>
-      </header>
+    <div className="min-h-screen bg-white">
+      <Header />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
@@ -50,7 +42,7 @@ function MentionsLegalesContent() {
                   <p className="font-semibold text-foreground">
                     {language === 'fr' ? 'Nom et prénom :' : 'First and last name:'}
                   </p>
-                  <p className="text-muted-foreground">Sahab Youssef</p>
+                  <p className="text-muted-foreground">GoSite</p>
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">
@@ -81,7 +73,7 @@ function MentionsLegalesContent() {
                 <p className="font-semibold text-foreground">
                   {language === 'fr' ? 'Email :' : 'Email:'}
                 </p>
-                <p className="text-muted-foreground">contact@siteupservices.online</p>
+                <p className="text-muted-foreground">contact@gosite.digital</p>
               </div>
             </div>
           </section>
@@ -119,8 +111,8 @@ function MentionsLegalesContent() {
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 {language === 'fr' 
-                  ? 'L\'ensemble du contenu (textes, images, vidéos, logos) présent sur ce site portfolio est la propriété exclusive de Sahab Youssef, sauf mentions contraires. Toute reproduction, distribution ou utilisation non autorisée est strictement interdite.'
-                  : 'All content (texts, images, videos, logos) present on this portfolio site is the exclusive property of Sahab Youssef, unless otherwise stated. Any unauthorized reproduction, distribution or use is strictly prohibited.'}
+                  ? 'L\'ensemble du contenu (textes, images, vidéos, logos) présent sur ce site portfolio est la propriété exclusive de GoSite, sauf mentions contraires. Toute reproduction, distribution ou utilisation non autorisée est strictement interdite.'
+                  : 'All content (texts, images, videos, logos) present on this portfolio site is the exclusive property of GoSite, unless otherwise stated. Any unauthorized reproduction, distribution or use is strictly prohibited.'}
               </p>
               <p className="font-semibold text-foreground mt-4">
                 {language === 'fr' ? 'Technologies utilisées :' : 'Technologies used:'}
@@ -230,7 +222,7 @@ function MentionsLegalesContent() {
                 {language === 'fr' ? 'Pour toute question juridique :' : 'For any legal question:'}
               </p>
               <div className="mt-4 p-4 bg-primary/10 rounded-lg border border-primary/20">
-                <p className="font-semibold text-primary">📧 contact@siteupservices.online</p>
+                <p className="font-semibold text-primary">📧 contact@gosite.digital</p>
                 <p className="font-semibold text-primary mt-2">📞 +212 751 134318</p>
                 <p className="font-semibold text-primary mt-2">
                   {language === 'fr' ? '📍 Maroc, Casablanca' : '📍 Morocco, Casablanca'}
@@ -260,7 +252,7 @@ function MentionsLegalesContent() {
         <div className="mt-16 text-center animate-fade-in-up">
           <Link 
             href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#0047ab] text-white rounded-lg hover:bg-[#003366] transition-colors duration-300"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -269,6 +261,8 @@ function MentionsLegalesContent() {
           </Link>
         </div>
       </div>
+
+      <Footer />
     </div>
   )
 }

@@ -1,26 +1,33 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { Inter, IBM_Plex_Mono } from 'next/font/google'
+import { Playfair_Display, Source_Sans_3, IBM_Plex_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import BackToTop from '@/components/BackToTop'
 import { AnimatedBackground } from '@/components/AnimatedBackground'
 import './globals.css'
 
-const _inter = Inter({ subsets: ["latin"] });
+const _playfair = Playfair_Display({ subsets: ["latin"], weight: ['400', '500', '600', '700', '800'], variable: '--font-heading' });
+const _sourceSans = Source_Sans_3({ subsets: ["latin"], weight: ['300', '400', '500', '600', '700'], variable: '--font-body' });
 const _ibmMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ['400', '500', '600'] });
 
 export const metadata: Metadata = {
-  title: 'Sahab Youssef - Developer Premium | WordPress • React • SEO • AI • Automation',
-  description: 'Expert en WordPress, React, GitHub, Vercel, Bricks, SEO, Automation et AI. Portfolio de consultant premium transformant des visions en solutions numériques performantes.',
-  generator: 'v0.app',
+  title: 'GoSite - Développeur Expert WordPress, React & SEO | Consultant Digital',
+  description: 'Développeur expert WordPress, React et SEO. Je crée des sites web performants qui convertissent vos visiteurs en clients. Audit gratuit disponible.',
+  keywords: ['wordpress', 'react', 'seo', 'développeur web', 'consultant digital', 'automation', 'intelligence artificielle'],
+  authors: [{ name: 'Sahab Youssef' }],
+  creator: 'GoSite',
+  openGraph: {
+    type: 'website',
+    locale: 'fr_FR',
+    url: 'https://gosite.digital',
+    siteName: 'GoSite',
+    title: 'GoSite - Développeur Expert WordPress, React & SEO',
+    description: 'Développeur expert WordPress, React et SEO. Je crée des sites web performants qui convertissent vos visiteurs en clients.',
+  },
   icons: {
-    icon: '/icon-light-32x32.png',
-    shortcut: '/icon-light-32x32.png',
-    apple: '/apple-icon.png',
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: '/apple-icon.png',
-    },
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
   },
 }
 
@@ -31,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body className={`${_playfair.variable} ${_sourceSans.variable} font-sans antialiased`}>
         <AnimatedBackground />
         {children}
         <Analytics />

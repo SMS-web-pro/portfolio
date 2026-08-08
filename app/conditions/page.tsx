@@ -5,26 +5,18 @@ import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
 import Link from 'next/link'
 import { LanguageProvider } from '@/context/LanguageContext'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 function ConditionsContent() {
   const { language } = useLanguage()
   const t = translations[language]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-secondary/20">
-      {/* Simple Header */}
-      <header className="border-b border-border bg-white/50 backdrop-blur-sm sticky top-0 z-40">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">SY</span>
-            </div>
-            <span className="font-semibold text-primary">Sahab Youssef</span>
-          </Link>
-        </div>
-      </header>
+    <div className="min-h-screen bg-white">
+      <Header />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
@@ -46,8 +38,8 @@ function ConditionsContent() {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               {language === 'fr' 
-                ? 'Sahab Youssef propose des services de développement web spécialisés dans :'
-                : 'Sahab Youssef offers specialized web development services in:'}
+                ? 'GoSite propose des services de développement web spécialisés dans :'
+                : 'GoSite offers specialized web development services in:'}
             </p>
             <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
               <li>{language === 'fr' ? 'Développement de sites WordPress sur mesure' : 'Custom WordPress website development'}</li>
@@ -229,10 +221,10 @@ function ConditionsContent() {
         </div>
 
         {/* Back to Home */}
-        <div className="mt-16 text-center animate-fade-in-up">
+        <div className="mt-16 text-center">
           <Link 
             href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#0047ab] text-white rounded-lg hover:bg-[#003366] transition-colors duration-300"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -241,6 +233,8 @@ function ConditionsContent() {
           </Link>
         </div>
       </div>
+
+      <Footer />
     </div>
   )
 }

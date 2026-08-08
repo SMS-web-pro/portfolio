@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
 import { EMAILJS_CONFIG } from '@/lib/emailjs-config'
+import SectionPattern from '@/components/SectionPattern'
 
 export default function Contact() {
   const { language } = useLanguage()
@@ -84,122 +85,116 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-secondary/20">
+    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <SectionPattern variant="contact" />
       <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
+        <div className="text-center mb-16">
+          <p className="text-sm font-semibold text-[#0047ab] uppercase tracking-[0.2em] mb-3">{language === 'fr' ? 'Contact' : 'Contact'}</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#0f1419] mb-4 text-balance font-heading">
             {t.contact.title}
           </h2>
-          <p className="text-lg text-muted-foreground text-pretty">
+          <p className="text-lg text-[#6b7280] text-pretty max-w-2xl mx-auto">
             {t.contact.description}
           </p>
-          <div className="w-12 h-1 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mt-6"></div>
+          <div className="w-12 h-0.5 bg-[#0047ab] mx-auto mt-6"></div>
         </div>
 
-        {/* Contact Options */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {[
-            { icon: '📧', label: language === 'fr' ? 'Email' : 'Email', value: 'contact@siteupservices.online', link: 'mailto:contact@siteupservices.online' },
-            { icon: '💬', label: t.contact.options.whatsapp, value: '+212 644 627826', link: 'https://wa.me/212644627826' },
-            { icon: '📞', label: language === 'fr' ? 'Téléphone' : 'Phone', value: '+212 751 134318', link: 'tel:+212751134318' },
+            { label: 'Email', value: 'contact@gosite.digital', link: 'mailto:contact@gosite.digital' },
+            { label: 'WhatsApp', value: '+212 644 627826', link: 'https://wa.me/212644627826' },
+            { label: language === 'fr' ? 'Téléphone' : 'Phone', value: '+212 751 134318', link: 'tel:+212751134318' },
           ].map((option, i) => (
             <a
               key={i}
               href={option.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`min-w-0 p-6 rounded-xl border border-border bg-white text-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group animate-fade-in-up cursor-pointer ${
-                i === 0 ? 'stagger-1' : i === 1 ? 'stagger-2' : 'stagger-3'
-              }`}
+              className="min-w-0 p-6 rounded-xl border border-[#e5e7eb] bg-white text-center hover:border-[#0047ab]/30 hover:shadow-lg transition-all duration-300 group"
             >
-              <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">{option.icon}</div>
-              <p className="text-sm text-muted-foreground mb-1">{option.label}</p>
-              <p className="whitespace-nowrap text-base sm:text-lg font-semibold text-primary group-hover:text-primary">{option.value}</p>
+              <p className="text-xs font-semibold text-[#0047ab] uppercase tracking-widest mb-2">{option.label}</p>
+              <p className="whitespace-nowrap text-base sm:text-lg font-semibold text-[#0f1419] group-hover:text-[#0047ab] transition-colors">{option.value}</p>
             </a>
           ))}
         </div>
 
-        {/* Form */}
-        <div className="rounded-2xl border border-border bg-white p-8 md:p-12 animate-fade-in-up">
-          <h3 className="text-2xl font-bold text-foreground mb-8">
+        {/* Form - Light Gray Background */}
+        <div className="rounded-2xl bg-[#f1f5f9] p-8 md:p-12">
+          <h3 className="text-2xl font-bold text-[#0f1419] mb-8 font-heading">
             {language === 'fr' ? 'Parlez-moi de votre projet' : 'Tell Me About Your Project'}
           </h3>
 
           {submitted ? (
             <div className="py-12 text-center">
-              <div className="text-6xl mb-4 animate-scale-in">✓</div>
-              <p className="text-xl font-semibold text-primary mb-2">{t.contact.form.success}</p>
-              <p className="text-muted-foreground">
+              <div className="w-16 h-16 rounded-full bg-[#22c55e] flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+              </div>
+              <p className="text-xl font-semibold text-[#0f1419] mb-2">{t.contact.form.success}</p>
+              <p className="text-[#6b7280]">
                 {language === 'fr' ? 'Je vous recontacterai sous 24h.' : 'I will contact you within 24 hours.'}
               </p>
             </div>
           ) : mounted ? (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Name */}
                 <div>
-                  <label className="block text-sm font-semibold text-foreground mb-2">{t.contact.form.name}</label>
+                  <label className="block text-sm font-semibold text-[#0f1419] mb-2">{t.contact.form.name}</label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-[#e5e7eb] bg-white text-[#0f1419] placeholder-[#9ca3af] focus:outline-none focus:border-[#0047ab] focus:ring-2 focus:ring-[#0047ab]/20 transition-all"
                     placeholder={language === 'fr' ? 'Jean Dupont' : 'John Doe'}
                   />
                 </div>
 
-                {/* Email */}
                 <div>
-                  <label className="block text-sm font-semibold text-foreground mb-2">{t.contact.form.email}</label>
+                  <label className="block text-sm font-semibold text-[#0f1419] mb-2">{t.contact.form.email}</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-[#e5e7eb] bg-white text-[#0f1419] placeholder-[#9ca3af] focus:outline-none focus:border-[#0047ab] focus:ring-2 focus:ring-[#0047ab]/20 transition-all"
                     placeholder="john@example.com"
                   />
                 </div>
 
-                {/* Company */}
                 <div>
-                  <label className="block text-sm font-semibold text-foreground mb-2">{t.contact.form.company}</label>
+                  <label className="block text-sm font-semibold text-[#0f1419] mb-2">{t.contact.form.company}</label>
                   <input
                     type="text"
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-[#e5e7eb] bg-white text-[#0f1419] placeholder-[#9ca3af] focus:outline-none focus:border-[#0047ab] focus:ring-2 focus:ring-[#0047ab]/20 transition-all"
                     placeholder={language === 'fr' ? 'Votre entreprise' : 'Your Company'}
                   />
                 </div>
 
-                {/* Phone */}
                 <div>
-                  <label className="block text-sm font-semibold text-foreground mb-2">{t.contact.form.phone}</label>
+                  <label className="block text-sm font-semibold text-[#0f1419] mb-2">{t.contact.form.phone}</label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-[#e5e7eb] bg-white text-[#0f1419] placeholder-[#9ca3af] focus:outline-none focus:border-[#0047ab] focus:ring-2 focus:ring-[#0047ab]/20 transition-all"
                     placeholder="+33 6 XX XX XX XX"
                   />
                 </div>
 
-                {/* Project Type */}
                 <div>
-                  <label className="block text-sm font-semibold text-foreground mb-2">{t.contact.form.projectType}</label>
+                  <label className="block text-sm font-semibold text-[#0f1419] mb-2">{t.contact.form.projectType}</label>
                   <select
                     name="projectType"
                     value={formData.projectType}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-[#e5e7eb] bg-white text-[#0f1419] focus:outline-none focus:border-[#0047ab] focus:ring-2 focus:ring-[#0047ab]/20 transition-all"
                   >
                     <option value="">{language === 'fr' ? '-- Sélectionner --' : '-- Select --'}</option>
                     {projectTypes.map((type) => (
@@ -210,14 +205,13 @@ export default function Contact() {
                   </select>
                 </div>
 
-                {/* Budget */}
                 <div>
-                  <label className="block text-sm font-semibold text-foreground mb-2">{t.contact.form.budget}</label>
+                  <label className="block text-sm font-semibold text-[#0f1419] mb-2">{t.contact.form.budget}</label>
                   <select
                     name="budget"
                     value={formData.budget}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-[#e5e7eb] bg-white text-[#0f1419] focus:outline-none focus:border-[#0047ab] focus:ring-2 focus:ring-[#0047ab]/20 transition-all"
                   >
                     <option value="">{language === 'fr' ? '-- Sélectionner --' : '-- Select --'}</option>
                     <option value="<2000">{language === 'fr' ? 'Moins de 2 000 €' : 'Under $2,000'}</option>
@@ -228,30 +222,28 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Message */}
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-2">{t.contact.form.message}</label>
+                <label className="block text-sm font-semibold text-[#0f1419] mb-2">{t.contact.form.message}</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-[#e5e7eb] bg-white text-[#0f1419] placeholder-[#9ca3af] focus:outline-none focus:border-[#0047ab] focus:ring-2 focus:ring-[#0047ab]/20 transition-all resize-none"
                   placeholder={language === 'fr' ? 'Décrivez votre projet, vos défis, et ce que vous cherchez à accomplir...' : 'Describe your project, challenges, and what you want to achieve...'}
                 ></textarea>
               </div>
 
-              {/* Submit Button */}
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-4 bg-gradient-to-r from-primary to-primary/90 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:scale-105 animate-breathe disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-4 bg-[#0047ab] text-white font-semibold rounded-lg hover:bg-[#003a8c] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? (language === 'fr' ? 'Envoi...' : 'Sending...') : t.contact.form.submit}
               </button>
 
-              <p className="text-center text-xs text-muted-foreground">
+              <p className="text-center text-xs text-[#6b7280]">
                 {language === 'fr' ? 'Je répondrai à votre message dans les 24 heures • Aucun spam' : 'I will respond within 24 hours • No spam'}
               </p>
             </form>
