@@ -48,7 +48,7 @@ export const sendContactEmail = async (formData: ContactFormData) => {
         project_type: formData.projectType,
         budget: formData.budget,
         message: formData.message,
-        to_email: 'sahab@example.com', // Votre email
+        to_email: 'contact@gosite.digital', // Votre email
       },
       PUBLIC_KEY
     )

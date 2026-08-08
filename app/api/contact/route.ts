@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
  *   sgMail.setApiKey(process.env.SENDGRID_API_KEY)
  *   
  *   await sgMail.send({
- *     to: 'sahab@example.com',
+ *     to: 'contact@gosite.digital',
  *     from: 'noreply@yourdomain.com',
  *     subject: `New Project Inquiry from ${data.name}`,
  *     html: `
@@ -121,7 +121,7 @@ export async function POST(request: NextRequest) {
  * async function sendWithResend(data: ContactFormData) {
  *   await resend.emails.send({
  *     from: 'Contact Form <onboarding@resend.dev>',
- *     to: 'sahab@example.com',
+ *     to: 'contact@gosite.digital',
  *     subject: `New Project Inquiry from ${data.name}`,
  *     html: `...`
  *   })
@@ -140,7 +140,7 @@ export async function POST(request: NextRequest) {
  *   
  *   await mg.messages.create(process.env.MAILGUN_DOMAIN, {
  *     from: 'Contact Form <noreply@yourdomain.com>',
- *     to: ['sahab@example.com'],
+ *     to: ['contact@gosite.digital'],
  *     subject: `New Inquiry: ${data.projectType}`,
  *     html: `...`
  *   })

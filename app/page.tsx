@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { LanguageProvider } from '@/context/LanguageContext'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
@@ -14,14 +14,6 @@ import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
 function HomeContent() {
-  const [scrollY, setScrollY] = useState(0)
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
     <main className="overflow-hidden">
       <Header />

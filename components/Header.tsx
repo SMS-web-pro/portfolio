@@ -1,145 +1,48 @@
 'use client'
 
-import React, { useState } from 'react'
-import Link from 'next/link'
+import { useState } from 'react'
+import { Menu, X } from 'lucide-react'
+import { BrandLogo } from '@/components/BrandLogo'
 import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [languageOpen, setLanguageOpen] = useState(false)
+  const [open, setOpen] = useState(false)
   const { language, setLanguage } = useLanguage()
   const t = translations[language]
-
   const navItems = [
     { label: t.header.services, href: '#services' },
     { label: t.header.projects, href: '#projects' },
     { label: t.header.expertise, href: '#expertise' },
-    { label: t.header.contact, href: '#contact' },
+    { label: language === 'fr' ? 'À propos' : 'About', href: '#about' },
   ]
 
-  const handleContactClick = () => {
-    const contactSection = document.getElementById('contact')
-    contactSection?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="#" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-[#0047ab] rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
-            </div>
-            <span className="font-bold text-[#0047ab] hidden sm:inline-block text-xl">Sahab-Youssef</span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-8">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-300 relative group"
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
-              </a>
-            ))}
-          </nav>
-
-          {/* Language Switcher & CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            {/* Language Switcher */}
-            <div className="relative">
-              <button
-                onClick={() => setLanguageOpen(!languageOpen)}
-                className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-                <span>{language.toUpperCase()}</span>
-                <svg className={`w-4 h-4 transition-transform duration-300 ${languageOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-              </button>
-              {languageOpen && (
-                <div className="absolute top-full right-0 mt-2 bg-white border border-border rounded-lg shadow-lg overflow-hidden animate-scale-in">
-                  <button
-                    onClick={() => {
-                      setLanguage('fr')
-                      setLanguageOpen(false)
-                    }}
-                    className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors ${language === 'fr' ? 'bg-primary/10 text-primary' : 'text-foreground hover:bg-secondary/50'}`}
-                  >
-                    🇫🇷 Français
-                  </button>
-                  <button
-                    onClick={() => {
-                      setLanguage('en')
-                      setLanguageOpen(false)
-                    }}
-                    className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors ${language === 'en' ? 'bg-primary/10 text-primary' : 'text-foreground hover:bg-secondary/50'}`}
-                  >
-                    🇬🇧 English
-                  </button>
-                </div>
-              )}
-            </div>
-
-            {/* CTA Button Desktop */}
-            <button
-              onClick={handleContactClick}
-              className="px-6 py-2 bg-primary text-white rounded-lg font-medium hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 animate-breathe"
-            >
-              {t.header.startProject}
-            </button>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-xl">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <BrandLogo />
+        <nav aria-label="Navigation principale" className="hidden items-center gap-7 lg:flex">
+          {navItems.map((item) => <a key={item.href} href={item.href} className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">{item.label}</a>)}
+        </nav>
+        <div className="hidden items-center gap-3 lg:flex">
+          <div className="flex rounded-lg border border-border p-1" aria-label="Language selector">
+            {(['fr', 'en'] as const).map((code) => <button key={code} onClick={() => setLanguage(code)} aria-pressed={language === code} className={`min-h-9 rounded-md px-3 text-xs font-semibold uppercase transition-colors ${language === code ? 'bg-secondary text-primary' : 'text-muted-foreground hover:text-foreground'}`}>{code}</button>)}
           </div>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden flex flex-col gap-1.5 p-2"
-          >
-            <div className={`w-6 h-0.5 bg-foreground transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
-            <div className={`w-6 h-0.5 bg-foreground transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></div>
-            <div className={`w-6 h-0.5 bg-foreground transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
-          </button>
+          <a href="#contact" className="inline-flex min-h-11 items-center rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5">{t.header.startProject}</a>
         </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <nav className="md:hidden pb-4 flex flex-col gap-3 animate-fade-in-down">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2"
-              >
-                {item.label}
-              </a>
-            ))}
-            <div className="flex gap-2 mt-2">
-              <button
-                onClick={() => setLanguage('fr')}
-                className={`flex-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${language === 'fr' ? 'bg-primary text-white' : 'bg-secondary text-foreground hover:bg-secondary/80'}`}
-              >
-                🇫🇷 FR
-              </button>
-              <button
-                onClick={() => setLanguage('en')}
-                className={`flex-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${language === 'en' ? 'bg-primary text-white' : 'bg-secondary text-foreground hover:bg-secondary/80'}`}
-              >
-                🇬🇧 EN
-              </button>
-            </div>
-            <button onClick={handleContactClick} className="w-full px-4 py-2 bg-primary text-white rounded-lg font-medium mt-2">
-              {t.header.startProject}
-            </button>
-          </nav>
-        )}
+        <button type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'} className="flex size-11 items-center justify-center rounded-lg border border-border text-foreground lg:hidden">
+          {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+        </button>
       </div>
+      {open && (
+        <nav id="mobile-navigation" className="border-t border-border bg-background px-4 pb-6 pt-4 lg:hidden">
+          <div className="mx-auto flex max-w-7xl flex-col gap-2">
+            {navItems.map((item) => <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="flex min-h-12 items-center rounded-lg px-3 font-medium text-foreground hover:bg-secondary">{item.label}</a>)}
+            <div className="mt-2 flex gap-2">{(['fr', 'en'] as const).map((code) => <button key={code} onClick={() => setLanguage(code)} className={`min-h-11 flex-1 rounded-lg border text-sm font-semibold uppercase ${language === code ? 'border-primary bg-primary text-primary-foreground' : 'border-border text-foreground'}`}>{code}</button>)}</div>
+            <a href="#contact" onClick={() => setOpen(false)} className="mt-2 inline-flex min-h-12 items-center justify-center rounded-lg bg-primary px-5 font-semibold text-primary-foreground">{t.header.startProject}</a>
+          </div>
+        </nav>
+      )}
     </header>
   )
 }

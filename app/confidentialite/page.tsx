@@ -117,7 +117,7 @@ function ConfidentialiteContent() {
                 : 'For any questions about this privacy policy or exercising your rights, contact us at:'}
             </p>
             <div className="mt-4 p-4 bg-primary/10 rounded-lg border border-primary/20">
-              <p className="font-semibold text-primary">📧 contact@siteupservices.online</p>
+              <p className="font-semibold text-primary">📧 contact@gosite.digital</p>
               <p className="font-semibold text-primary mt-2">📞 +212 751 134318</p>
             </div>
           </section>

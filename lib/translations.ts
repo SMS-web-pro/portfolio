@@ -164,7 +164,7 @@ export const translations = {
       advantage4: 'Prix Transparent',
       advantage4Desc: 'Pas de surprises. Devis clair, budget respecté, timeline respectée.',
       advantage5: 'Support Premium',
-      advantage5Desc: 'Réponses en <2h. Support proactif. Pas de ticket black hole.',
+      advantage5Desc: 'R��ponses en <2h. Support proactif. Pas de ticket black hole.',
       advantage6: 'Focus Conversion',
       advantage6Desc: 'Chaque pixel pensé pour convertir. Pas juste "joli", mais RENTABLE.',
     },
@@ -186,7 +186,7 @@ export const translations = {
       },
       options: {
         title: 'Ou contactez-moi directement',
-        email: 'sahab@example.com',
+        email: 'contact@gosite.digital',
         phone: '+33 6 XX XX XX XX',
         whatsapp: 'WhatsApp',
         calendly: 'Calendrier',
@@ -400,7 +400,7 @@ export const translations = {
       },
       options: {
         title: 'Or contact me directly',
-        email: 'sahab@example.com',
+        email: 'contact@gosite.digital',
         phone: '+33 6 XX XX XX XX',
         whatsapp: 'WhatsApp',
         calendly: 'Calendar',

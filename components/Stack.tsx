@@ -1,124 +1,44 @@
 'use client'
 
-import React from 'react'
 import { useLanguage } from '@/context/LanguageContext'
-import { translations } from '@/lib/translations'
+import { SectionPattern } from '@/components/SectionPattern'
+
+const tracks = [
+  ['WordPress', 'WooCommerce', 'Bricks', 'React', 'Next.js', 'TypeScript', 'JavaScript', 'Node.js', 'Tailwind CSS', 'Vercel', 'Git & GitHub'],
+  ['PostgreSQL', 'REST API', 'GraphQL', 'Stripe', 'Docker', 'CI/CD', 'n8n', 'Make', 'Zapier', 'OpenAI', 'Figma'],
+  ['SEO technique', 'Schema.org', 'Core Web Vitals', 'GA4', 'Search Console', 'Ahrefs', 'SEMrush', 'Accessibilité', 'Performance', 'pSEO']
+]
 
 export default function Stack() {
   const { language } = useLanguage()
-  const t = translations[language]
-
-  const stackCategories = [
-    {
-      title: language === 'fr' ? 'Frontend' : 'Frontend',
-      items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
-      color: 'from-blue-500/20 to-blue-500/5'
-    },
-    {
-      title: language === 'fr' ? 'CMS & Builder' : 'CMS & Builder',
-      items: ['WordPress', 'Bricks Builder', 'Elementor Pro', 'ACF', language === 'fr' ? 'Plugins Custom' : 'Custom Plugins'],
-      color: 'from-purple-500/20 to-purple-500/5'
-    },
-    {
-      title: language === 'fr' ? 'Backend & Base de Données' : 'Backend & DB',
-      items: ['Node.js', 'PostgreSQL', 'MongoDB', 'REST APIs', 'GraphQL'],
-      color: 'from-green-500/20 to-green-500/5'
-    },
-    {
-      title: language === 'fr' ? 'Automation & IA' : 'Automation & AI',
-      items: ['Zapier', 'Make', 'N8N', 'GitHub Actions', language === 'fr' ? 'Intégration GPT' : 'GPT Integration', language === 'fr' ? 'Scripts Custom' : 'Custom Scripts'],
-      color: 'from-orange-500/20 to-orange-500/5'
-    },
-    {
-      title: language === 'fr' ? 'SEO & Analytics' : 'SEO & Analytics',
-      items: ['Google Analytics', 'SEMrush', 'Ahrefs', 'Schema Markup', 'Core Web Vitals'],
-      color: 'from-pink-500/20 to-pink-500/5'
-    },
-    {
-      title: language === 'fr' ? 'Déploiement & DevOps' : 'Deployment & DevOps',
-      items: ['Vercel', 'GitHub', 'Docker', 'CI/CD', 'Netlify'],
-      color: 'from-cyan-500/20 to-cyan-500/5'
-    },
-  ]
-
   return (
-    <section id="expertise" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-block mb-4 px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20">
-            {t.stack.title}
+    <section id="expertise" className="relative overflow-hidden bg-foreground py-20 text-background sm:py-28">
+      <SectionPattern variant="dots" />
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-3xl">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-accent">{language === 'fr' ? 'Technologies maîtrisées' : 'Technology expertise'}</p>
+            <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight text-background sm:text-5xl">{language === 'fr' ? 'Une stack complète, choisie selon le problème.' : 'A complete stack, chosen around the problem.'}</h2>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
-            {language === 'fr' ? 'Technologies & Expertise' : 'Tech Stack & Expertise'}
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            {t.stack.description}
-          </p>
+          <p className="max-w-md text-pretty text-sm leading-relaxed text-background/65 sm:text-base">{language === 'fr' ? 'Du site éditorial au produit SaaS, GoSite assemble les bons outils pour la performance, la maintenabilité et la croissance.' : 'From editorial websites to SaaS products, GoSite combines the right tools for performance, maintainability and growth.'}</p>
         </div>
-
-        {/* Stack Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {stackCategories.map((category, index) => (
-            <div
-              key={index}
-              className={`p-8 rounded-xl border border-border bg-gradient-to-br ${category.color} hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 animate-fade-in-up group hover:lift relative overflow-hidden ${
-                index === 0 ? 'stagger-1' : index === 1 ? 'stagger-2' : 'stagger-3'
-              }`}
-            >
-              {/* Animated Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-xl"></div>
-              
-              <div className="relative">
-                <h3 className="text-lg font-bold text-foreground mb-6 group-hover:text-primary transition-colors">{category.title}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {category.items.map((item, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1.5 bg-white border border-border rounded-full text-sm font-medium text-foreground hover:border-primary hover:text-primary hover:shadow-md hover:shadow-primary/20 hover:scale-110 transition-all duration-300 cursor-pointer hover:bg-primary hover:text-white"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
+      </div>
+      <div className="relative z-10 mt-14 flex flex-col gap-4">
+        {tracks.map((track, index) => (
+          <div key={index} className="marquee-viewport marquee-mask overflow-hidden py-1" tabIndex={0} aria-label={language === 'fr' ? 'Défilement des technologies, mettre au focus pour suspendre' : 'Technology marquee, focus to pause'}>
+            <div className={`marquee-track gap-3 px-2 ${index === 1 ? 'marquee-reverse' : ''}`}>
+              {[...track, ...track].map((item, itemIndex) => <span key={`${item}-${itemIndex}`} aria-hidden={itemIndex >= track.length} className="inline-flex min-h-12 shrink-0 items-center rounded-full border border-background/15 bg-background/5 px-5 font-mono text-sm text-background/85 backdrop-blur-sm transition-colors hover:border-accent/50 hover:bg-accent/10 hover:text-background">{item}</span>)}
             </div>
-          ))}
-        </div>
-
-        {/* Credentials Section */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {[
-            { number: '96%', label: t.stack.stats.projects },
-            { number: '7+', label: t.stack.stats.experience },
-            { number: '95%', label: t.stack.stats.satisfaction },
-            { number: '100% ± 5%', label: t.stack.stats.timeline },
-          ].map((stat, i) => (
-            <div
-              key={i}
-              className={`p-6 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 text-center group hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 animate-scale-in hover:lift relative overflow-hidden ${
-                i === 0 ? 'stagger-1' : i === 1 ? 'stagger-2' : i === 2 ? 'stagger-3' : 'stagger-4'
-              }`}
-            >
-              {/* Animated Background */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              
-              <div className="relative">
-                <div className="text-4xl font-bold text-primary mb-2 group-hover:scale-125 group-hover:animate-bounce-delayed transition-transform">
-                  {stat.number.includes('±') ? (
-                    <>
-                      <span className="text-4xl">{stat.number.split('±')[0]}</span>
-                      <span className="text-sm ml-1">± 5%</span>
-                    </>
-                  ) : (
-                    stat.number
-                  )}
-                </div>
-                <p className="text-muted-foreground text-sm group-hover:text-primary/70 transition-colors">{stat.label}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+          </div>
+        ))}
+      </div>
+      <div className="relative z-10 mx-auto mt-14 grid max-w-7xl grid-cols-2 gap-px overflow-hidden rounded-xl border border-background/10 bg-background/10 sm:grid-cols-4">
+        {[
+          ['7+', language === 'fr' ? 'ans d’expérience' : 'years of experience'],
+          ['30+', language === 'fr' ? 'technologies mobilisées' : 'technologies used'],
+          ['360°', language === 'fr' ? 'vision produit & acquisition' : 'product & acquisition view'],
+          ['2', language === 'fr' ? 'marchés : Maroc & monde' : 'markets: Morocco & world']
+        ].map(([value, label]) => <div key={label} className="bg-foreground p-5 sm:p-7"><p className="text-3xl font-bold text-background sm:text-4xl">{value}</p><p className="mt-2 text-xs leading-relaxed text-background/55 sm:text-sm">{label}</p></div>)}
       </div>
     </section>
   )

@@ -418,4 +418,118 @@
   .stagger-3 { animation-delay: 0.3s; }
   .stagger-4 { animation-delay: 0.4s; }
   .stagger-5 { animation-delay: 0.5s; }
+
+  .animation-delay-2000 { animation-delay: 2s; }
+  .animation-delay-4000 { animation-delay: 4s; }
+
+  /* Brand logo animation */
+  @keyframes brandDraw {
+    from { stroke-dashoffset: 120; opacity: 0; }
+    to { stroke-dashoffset: 0; opacity: 1; }
+  }
+  @keyframes brandSpark {
+    0%, 100% { opacity: 0.4; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+  .brand-mark::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.35), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .group:hover .brand-mark::after { opacity: 1; }
+  .brand-path {
+    stroke-dasharray: 120;
+    animation: brandDraw 1.1s ease-out forwards;
+  }
+  .brand-spark {
+    transform-origin: 29px 8px;
+    animation: brandSpark 2.4s ease-in-out infinite;
+  }
+
+  /* Infinite marquee for tech stack */
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+    will-change: transform;
+  }
+  .marquee-track.marquee-reverse { animation-direction: reverse; animation-duration: 48s; }
+  .marquee-viewport:hover .marquee-track,
+  .marquee-viewport:focus-within .marquee-track { animation-play-state: paused; }
+  .marquee-mask {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  /* Section decorative patterns */
+  .section-pattern {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .pattern-grid {
+    background-image:
+      linear-gradient(to right, color-mix(in oklab, var(--primary) 8%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, var(--primary) 8%, transparent) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 40%, transparent 100%);
+  }
+  .pattern-dots {
+    background-image: radial-gradient(color-mix(in oklab, var(--primary) 14%, transparent) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+    -webkit-mask-image: radial-gradient(ellipse 60% 60% at 80% 20%, #000 30%, transparent 100%);
+    mask-image: radial-gradient(ellipse 60% 60% at 80% 20%, #000 30%, transparent 100%);
+  }
+  .pattern-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 520px;
+    height: 520px;
+    border: 1px solid color-mix(in oklab, var(--primary) 12%, transparent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate-slow 40s linear infinite;
+  }
+  .pattern-orbit::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px 2px color-mix(in oklab, var(--accent) 60%, transparent);
+  }
+  .pattern-orbit-secondary {
+    width: 320px;
+    height: 320px;
+    border-color: color-mix(in oklab, var(--accent) 14%, transparent);
+    animation-duration: 26s;
+    animation-direction: reverse;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    .marquee-track { animation: none !important; }
+    .brand-path { stroke-dashoffset: 0 !important; opacity: 1 !important; }
+  }
 }
