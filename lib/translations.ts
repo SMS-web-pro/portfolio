@@ -8,8 +8,8 @@ export const translations = {
       startProject: 'Discutons de votre projet',
     },
     hero: {
-      title: 'Transformez Votre Présence Numérique en Moteur de Croissance',
-      subtitle: 'Développeur expert WordPress, React et SEO. Je construis des sites web performants qui convertissent vos visiteurs en clients.',
+      title: 'Je Crée des Sites WordPress & React Qui Rankent et Convertissent',
+      subtitle: '7 ans à transformer des sites sous-performants en machines à générer du trafic et des ventes — pour des entreprises au Maroc et en Europe.',
       cta1: 'Démarrer mon projet',
       cta2: 'Voir mes réalisations',
     },

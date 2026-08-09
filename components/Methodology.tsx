@@ -119,22 +119,35 @@ export default function Methodology() {
         <div className="bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 rounded-2xl p-8 md:p-12 border border-primary/20 animate-fade-in-up hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 relative overflow-hidden group">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none"></div>
           <div className="relative">
-            <h3 className="text-2xl font-bold text-foreground mb-8 group-hover:text-primary transition-colors">Garanties Qualité</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-8 group-hover:text-primary transition-colors">{language === 'fr' ? 'Garanties Qualité' : 'Quality Guarantees'}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
+              {(language === 'fr' ? [
                 'Délais respectés ± 5%',
                 'Budget transparent',
                 'Code documenté',
                 'Tests complets',
                 'Support 30j gratuit',
-                'Revisions illimitées (fase dev)',
+                'Révisions illimitées (phase de développement)',
                 'Performance 90+ Lighthouse',
                 'SEO On-Page optimisé',
                 'Mobile First Responsive',
                 'Sécurité standards OWASP',
                 'Backup & Recovery plan',
                 'Formation client incluse',
-              ].map((item, i) => (
+              ] : [
+                'Deadlines met ± 5%',
+                'Transparent budget',
+                'Documented code',
+                'Complete testing',
+                '30-day free support',
+                'Unlimited revisions (dev phase)',
+                '90+ Lighthouse performance',
+                'On-Page SEO optimized',
+                'Mobile First Responsive',
+                'OWASP security standards',
+                'Backup & Recovery plan',
+                'Client training included',
+              ]).map((item, i) => (
                 <div 
                   key={i} 
                   className="flex items-center gap-3 group/item animate-fade-in-up hover:translate-x-2 transition-transform duration-300"

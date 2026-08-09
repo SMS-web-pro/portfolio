@@ -21,8 +21,10 @@ export default function Identity() {
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 via-accent/10 to-primary/10 border border-border p-2 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 overflow-hidden">
               <img 
                 src="/sahab-office.jpg" 
-                alt="GoSite in modern office with city view" 
+                alt="Sahab Youssef, expert développeur WordPress React SEO, au Maroc" 
                 className="w-full h-full rounded-xl object-cover"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
             
@@ -36,7 +38,7 @@ export default function Identity() {
               
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <a
-                  href="/cv.pdf.pdf"
+                  href="/cv.pdf"
                   download="sahab-youssef-cv.pdf"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-medium rounded-md hover:bg-primary/90 transition-colors duration-200"
                 >
