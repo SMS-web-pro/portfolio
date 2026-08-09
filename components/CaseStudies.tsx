@@ -22,6 +22,7 @@ export default function CaseStudies() {
       description: language === 'fr' ? t.caseStudies.project1.description : t.caseStudies.project1.description,
       detail: language === 'fr' ? t.caseStudies.project1.detail : t.caseStudies.project1.detail,
       image: '/mockup-wordpress.jpg',
+      alt: language === 'fr' ? 'Refonte WordPress SaaS – +250% trafic et score Lighthouse 98/100' : 'WordPress SaaS Platform Redesign – +250% traffic, Lighthouse score 98/100',
       results: t.caseStudies.project1.results,
       tags: t.caseStudies.project1.tags,
       budget: t.caseStudies.project1.budget,
@@ -34,6 +35,7 @@ export default function CaseStudies() {
       description: language === 'fr' ? t.caseStudies.project2.description : t.caseStudies.project2.description,
       detail: language === 'fr' ? t.caseStudies.project2.detail : t.caseStudies.project2.detail,
       image: '/mockup-react.jpg',
+      alt: language === 'fr' ? 'Application React Next.js – dashboard temps réel 10M points de données/jour' : 'React Next.js Application – real-time dashboard, 10M data points/day',
       results: t.caseStudies.project2.results,
       tags: t.caseStudies.project2.tags,
       budget: t.caseStudies.project2.budget,
@@ -46,6 +48,7 @@ export default function CaseStudies() {
       description: language === 'fr' ? t.caseStudies.project3.description : t.caseStudies.project3.description,
       detail: language === 'fr' ? t.caseStudies.project3.detail : t.caseStudies.project3.detail,
       image: '/mockup-seo.jpg',
+      alt: language === 'fr' ? 'Optimisation SEO – passage de la position 50 à position 1 Google' : 'SEO Optimization – from position 50 to Google position 1',
       results: t.caseStudies.project3.results,
       tags: t.caseStudies.project3.tags,
       budget: t.caseStudies.project3.budget,
@@ -58,6 +61,7 @@ export default function CaseStudies() {
       description: language === 'fr' ? t.caseStudies.project4.description : t.caseStudies.project4.description,
       detail: language === 'fr' ? t.caseStudies.project4.detail : t.caseStudies.project4.detail,
       image: '/mockup-ai.jpg',
+      alt: language === 'fr' ? 'Automatisation IA avec Make et Zapier – 40h/semaine économisées' : 'AI Automation with Make and Zapier – 40 hours/week saved',
       results: t.caseStudies.project4.results,
       tags: t.caseStudies.project4.tags,
       budget: t.caseStudies.project4.budget,
@@ -70,6 +74,7 @@ export default function CaseStudies() {
       description: language === 'fr' ? t.caseStudies.project5.description : t.caseStudies.project5.description,
       detail: language === 'fr' ? t.caseStudies.project5.detail : t.caseStudies.project5.detail,
       image: '/mockup-ecommerce.jpg',
+      alt: language === 'fr' ? 'Refonte e-commerce WooCommerce – +180% revenus en 4 mois' : 'WooCommerce E-commerce Redesign – +180% revenue in 4 months',
       results: t.caseStudies.project5.results,
       tags: t.caseStudies.project5.tags,
       budget: t.caseStudies.project5.budget,
@@ -82,6 +87,7 @@ export default function CaseStudies() {
       description: language === 'fr' ? t.caseStudies.project6.description : t.caseStudies.project6.description,
       detail: language === 'fr' ? t.caseStudies.project6.detail : t.caseStudies.project6.detail,
       image: '/mockup-saas.jpg',
+      alt: language === 'fr' ? 'Plateforme SaaS multi-tenant Next.js – 5000+ utilisateurs actifs' : 'Multi-tenant Next.js SaaS Platform – 5000+ active users',
       results: t.caseStudies.project6.results,
       tags: t.caseStudies.project6.tags,
       budget: t.caseStudies.project6.budget,
@@ -122,8 +128,9 @@ export default function CaseStudies() {
               <div className="relative overflow-hidden h-64 bg-gradient-to-br from-primary/10 to-accent/10">
                 <Image
                   src={project.image || '/placeholder.svg'}
-                  alt={project.title}
+                  alt={project.alt}
                   fill
+                  loading="lazy"
                   className="object-cover group-hover:scale-125 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -374,6 +381,16 @@ export default function CaseStudies() {
           language={language}
         />
       )}
+
+      {/* Micro CTA */}
+      <div className="text-center mt-12">
+        <p className="text-[#6b7280] mb-4">
+          {language === 'fr' ? 'Votre projet mérite les mêmes résultats.' : 'Your project deserves the same results.'}
+        </p>
+        <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 bg-[#0047ab] text-white font-semibold rounded-lg hover:bg-[#003a8c] transition-colors">
+          {language === 'fr' ? 'Demander un audit gratuit →' : 'Request a free audit →'}
+        </a>
+      </div>
     </section>
   )
 }

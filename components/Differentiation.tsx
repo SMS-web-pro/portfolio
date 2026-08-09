@@ -226,6 +226,16 @@ export default function Differentiation() {
             </div>
           </div>
         </div>
+
+        {/* Micro CTA */}
+        <div className="text-center mt-12">
+          <p className="text-[#6b7280] mb-4">
+            {language === 'fr' ? 'Rejoignez 50+ clients satisfaits.' : 'Join 50+ satisfied clients.'}
+          </p>
+          <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 bg-[#0047ab] text-white font-semibold rounded-lg hover:bg-[#003a8c] transition-colors">
+            {language === 'fr' ? 'Démarrer mon projet →' : 'Start my project →'}
+          </a>
+        </div>
       </div>
     </section>
   )

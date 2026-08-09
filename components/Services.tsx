@@ -85,6 +85,16 @@ export default function Services() {
             )
           })}
         </div>
+
+        {/* Micro CTA */}
+        <div className="text-center mt-12">
+          <p className="text-[#6b7280] mb-4">
+            {language === 'fr' ? 'Vous cherchez un de ces services pour votre projet ?' : 'Looking for one of these services for your project?'}
+          </p>
+          <a href="#contact" className="inline-flex items-center gap-2 text-[#0047ab] font-semibold hover:underline">
+            {language === 'fr' ? 'Parlons-en gratuitement →' : 'Let\'s discuss it for free →'}
+          </a>
+        </div>
       </div>
     </section>
   )

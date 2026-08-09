@@ -243,48 +243,32 @@ export default function Contact() {
               <p className="text-muted-foreground text-sm">{t.contact.faq.a1}</p>
             </div>
             <div>
-              <h4 className="font-semibold text-foreground mb-2">
-                {language === 'fr' ? 'Support après livraison ?' : 'Do you offer post-delivery support?'}
-              </h4>
-              <p className="text-muted-foreground text-sm">
-                {language === 'fr' 
-                  ? 'Oui, 3 mois de support inclus. Maintenance premium disponible.' 
-                  : 'Yes, 3 months of support included. Premium maintenance available.'}
-              </p>
+              <h4 className="font-semibold text-foreground mb-2">{t.contact.faq.q2}</h4>
+              <p className="text-muted-foreground text-sm">{t.contact.faq.a2}</p>
             </div>
             <div>
               <h4 className="font-semibold text-foreground mb-2">{t.contact.faq.q3}</h4>
               <p className="text-muted-foreground text-sm">{t.contact.faq.a3}</p>
             </div>
             <div>
-              <h4 className="font-semibold text-foreground mb-2">
-                {language === 'fr' ? 'Quelle est votre approche de projet ?' : 'What is your project approach?'}
-              </h4>
-              <p className="text-muted-foreground text-sm">
-                {language === 'fr' 
-                  ? 'Méthodologie Agile: Sprint planning, livraisons hebdomadaires, tests continus. Transparence totale sur les progrès.' 
-                  : 'Agile methodology: Sprint planning, weekly deliveries, continuous testing. Full transparency on progress.'}
-              </p>
+              <h4 className="font-semibold text-foreground mb-2">{t.contact.faq.q4}</h4>
+              <p className="text-muted-foreground text-sm">{t.contact.faq.a4}</p>
             </div>
             <div>
-              <h4 className="font-semibold text-foreground mb-2">
-                {language === 'fr' ? 'Assurez-vous la confidentialité des données ?' : 'Do you ensure data confidentiality?'}
-              </h4>
-              <p className="text-muted-foreground text-sm">
-                {language === 'fr' 
-                  ? 'Oui. NDA disponible sur demande. Hébergement sécurisé, backups quotidiens, conformité RGPD.' 
-                  : 'Yes. NDA available on request. Secure hosting, daily backups, GDPR compliance.'}
-              </p>
+              <h4 className="font-semibold text-foreground mb-2">{t.contact.faq.q5}</h4>
+              <p className="text-muted-foreground text-sm">{t.contact.faq.a5}</p>
             </div>
             <div>
-              <h4 className="font-semibold text-foreground mb-2">
-                {language === 'fr' ? 'Comment garantissez-vous la qualité ?' : 'How do you guarantee quality?'}
-              </h4>
-              <p className="text-muted-foreground text-sm">
-                {language === 'fr' 
-                  ? 'Tests automatisés, code review, monitoring performance. Garantie 30 jours sur tous livrables.' 
-                  : 'Automated testing, code review, performance monitoring. 30-day guarantee on all deliverables.'}
-              </p>
+              <h4 className="font-semibold text-foreground mb-2">{t.contact.faq.q6}</h4>
+              <p className="text-muted-foreground text-sm">{t.contact.faq.a6}</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t.contact.faq.q7}</h4>
+              <p className="text-muted-foreground text-sm">{t.contact.faq.a7}</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t.contact.faq.q8}</h4>
+              <p className="text-muted-foreground text-sm">{t.contact.faq.a8}</p>
             </div>
           </div>
         </div>
