@@ -28,27 +28,27 @@ export const translations = {
       description: 'Des solutions digitales professionnelles adaptées à vos objectifs business',
       service1: {
         title: 'WordPress Haute Performance',
-        desc: 'Sites WordPress ultra-rapides avec Bricks Builder. Optimisation complète, référencement naturel intégré, design orienté conversion.',
+        desc: 'Sites WordPress ultra-rapides avec Bricks Builder, score Lighthouse 95+, temps de chargement < 1.5s. Optimisation complète, SEO intégré, design orienté conversion. Résultat type : +250% trafic organique.',
       },
       service2: {
         title: 'Développement React & Full-Stack',
-        desc: 'Applications web modernes avec Next.js et Vercel. Tableaux de bord, plateformes SaaS, solutions temps réel.',
+        desc: 'Applications web modernes avec Next.js et Vercel. Dashboards interactifs, plateformes SaaS, solutions temps réel. Livré en 4-8 semaines avec tests et documentation.',
       },
       service3: {
         title: 'SEO & Stratégie Google',
-        desc: 'Audit SEO complet, optimisation technique, stratégie de contenu, amélioration du positionnement sur Google.',
+        desc: 'Audit SEO complet (100+ critères), optimisation technique, stratégie de contenu et link building. Résultat : page 1 Google en 3-6 mois sur vos mots-clés cibles.',
       },
       service4: {
         title: 'Automatisation & Workflows IA',
-        desc: 'Automatisation intelligente avec Zapier, Make et intelligence artificielle. Gain de temps significatif sur vos processus répétitifs.',
+        desc: 'Automatisation intelligente avec Zapier, Make et n8n. gain de 10-20h/semaine sur vos processus répétitifs. Intégration IA pour le service client, la prospection et le scoring.',
       },
       service5: {
-        title: 'Conseil Digital Stratégique',
-        desc: 'Audit stratégique, feuille de route technique, accompagnement expert. Décisions basées sur les données.',
+        title: 'Audit Digital & Plan de Croissance',
+        desc: 'Audit complet de votre présence digitale, feuille de route technique personnalisée et accompagnement expert pour maximiser votre ROI.',
       },
       service6: {
-        title: 'Intégrations & Maintenance',
-        desc: 'Intégrations API, migrations, maintenance proactive. Support technique disponible.',
+        title: 'Intégrations API & Support Prioritaire',
+        desc: 'Intégrations API, migrations, maintenance proactive et support technique dédié. Zéro downtime garanti.',
       },
     },
     stack: {
@@ -242,27 +242,27 @@ export const translations = {
       description: 'Professional digital solutions tailored to your business objectives',
       service1: {
         title: 'High-Performance WordPress',
-        desc: 'Ultra-fast WordPress sites with Bricks Builder. Complete optimization, built-in SEO, conversion-focused design.',
+        desc: 'Ultra-fast WordPress sites with Bricks Builder, 95+ Lighthouse score, < 1.5s load time. Complete optimization, built-in SEO, conversion-focused design. Typical result: +250% organic traffic.',
       },
       service2: {
         title: 'React & Full-Stack Development',
-        desc: 'Modern web applications with Next.js and Vercel. Dashboards, SaaS platforms, real-time solutions.',
+        desc: 'Modern web applications with Next.js and Vercel. Interactive dashboards, SaaS platforms, real-time solutions. Delivered in 4-8 weeks with testing and documentation.',
       },
       service3: {
         title: 'SEO Strategy & Google Rankings',
-        desc: 'Complete SEO audit, technical optimization, content strategy, improved Google rankings.',
+        desc: 'Complete SEO audit (100+ criteria), technical optimization, content strategy and link building. Result: Page 1 Google in 3-6 months on your target keywords.',
       },
       service4: {
         title: 'Automation & AI Workflows',
-        desc: 'Smart automation with Zapier, Make and artificial intelligence. Significant time savings on repetitive processes.',
+        desc: 'Smart automation with Zapier, Make and n8n. Save 10-20 hours/week on repetitive processes. AI integration for customer service, prospecting and lead scoring.',
       },
       service5: {
-        title: 'Strategic Digital Consulting',
-        desc: 'Strategic audit, technical roadmap, expert guidance. Data-driven decisions.',
+        title: 'Digital Audit & Growth Roadmap',
+        desc: 'Complete digital presence audit, customized technical roadmap and expert consulting to maximize your ROI. Delivered in 2 weeks.',
       },
       service6: {
-        title: 'Integrations & Maintenance',
-        desc: 'API integrations, migrations, proactive maintenance. Technical support available.',
+        title: 'API Integrations & Priority Support',
+        desc: 'API integrations, migrations, proactive maintenance and dedicated technical support. Zero downtime guaranteed.',
       },
     },
     stack: {

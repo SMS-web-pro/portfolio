@@ -26,8 +26,8 @@ export default function Footer() {
             </Link>
             <p className="text-[#6b7280] text-sm mb-4">
               {language === 'fr' 
-                ? 'Développeur spécialisé en WordPress, React, Node.js, n8n, Backend & Frontend. Expert en automatisation et solutions IA pour entreprises.'
-                : 'Developer specialized in WordPress, React, Node.js, n8n, Backend & Frontend. Expert in automation and AI solutions for businesses.'}
+                ? 'Développeur spécialisé en WordPress, React, Node.js, n8n, Backend & Frontend. Basé au Maroc · Clients internationaux. Expert en automatisation et solutions IA pour entreprises.'
+                : 'Developer specialized in WordPress, React, Node.js, n8n, Backend & Frontend. Based in Morocco · Serving clients worldwide. Expert in automation and AI solutions for businesses.'}
             </p>
           </div>
 

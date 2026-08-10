@@ -32,8 +32,8 @@ export default function Identity() {
             <div className="mt-6 text-center animate-fade-in-up stagger-3">
               <p className="text-sm text-muted-foreground mb-4 font-medium">
                 {language === 'fr' 
-                  ? 'Découvrez mon parcours et mes réalisations'
-                  : 'Discover my background and achievements'}
+                  ? 'Parcours complet et références disponibles'
+                  : 'Full background and references available'}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
