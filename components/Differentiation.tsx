@@ -23,19 +23,19 @@ export default function Differentiation() {
   ]
 
   const testimonials = language === 'fr' ? [
-    { quote: 'GoSite a transformé notre WordPress en une machine de conversion. Le trafic a augmenté de 320% en quatre mois.', author: 'Marie', rating: 5, company: 'Fondatrice e-commerce' },
-    { quote: 'Un véritable consultant, pas seulement un développeur. Il m\'a aidé à repenser entièrement mon approche commerciale.', author: 'Pierre', rating: 5, company: 'Directeur Général SaaS' },
-    { quote: 'Support réactif, code impeccable, retour sur investissement impressionnant. Je recommande vivement.', author: 'Sophie', rating: 5, company: 'Directrice Marketing' },
-    { quote: 'Expert technique rare. Il a modernisé notre architecture et amélioré nos performances de trois fois.', author: 'Youssef', rating: 5, company: 'Directeur Technique' },
-    { quote: 'La meilleure décision pour notre projet. Livré avant les délais, budget strictement respecté.', author: 'Fatima', rating: 4, company: 'Directrice Marketing' },
-    { quote: 'Code propre, documentation parfaite. Son travail est facilement maintenable par d\'autres développeurs.', author: 'Karim', rating: 5, company: 'Directeur Technique Startup' },
+    { quote: 'GoSite a transformé notre WordPress en une machine de conversion. Le trafic a augmenté de 320% en quatre mois.', author: 'B.A.', rating: 5, company: 'Fondatrice, E-commerce Mode' },
+    { quote: 'Un véritable consultant, pas seulement un développeur. Il m\'a aidé à repenser entièrement mon approche commerciale.', author: 'L.M.', rating: 5, company: 'CEO, SaaS B2B' },
+    { quote: 'Support réactif, code impeccable, retour sur investissement impressionnant. Je recommande vivement.', author: 'S.K.', rating: 5, company: 'Directrice Marketing, Agence' },
+    { quote: 'Expert technique rare. Il a modernisé notre architecture et amélioré nos performances de trois fois.', author: 'R.T.', rating: 5, company: 'CTO, Tech Startup' },
+    { quote: 'La meilleure décision pour notre projet. Livré avant les délais, budget strictement respecté.', author: 'F.Z.', rating: 4, company: 'Directrice, PME Industrie' },
+    { quote: 'Code propre, documentation parfaite. Son travail est facilement maintenable par d\'autres développeurs.', author: 'K.H.', rating: 5, company: 'Lead Dev, Startup Fintech' },
   ] : [
-    { quote: 'GoSite transformed our WordPress into a conversion machine. Traffic increased by 320% in four months.', author: 'Marie', rating: 5, company: 'E-commerce Founder' },
-    { quote: 'A true consultant, not just a developer. He helped me completely rethink my business approach.', author: 'Pierre', rating: 5, company: 'SaaS CEO' },
-    { quote: 'Fast support, impeccable code, impressive return on investment. Highly recommended.', author: 'Sophie', rating: 5, company: 'Marketing Director' },
-    { quote: 'Rare technical expert. He modernized our architecture and improved performance threefold.', author: 'Youssef', rating: 5, company: 'Chief Technology Officer' },
-    { quote: 'Best decision for our project. Delivered ahead of schedule, budget strictly respected.', author: 'Fatima', rating: 4, company: 'Marketing Director' },
-    { quote: 'Clean code, perfect documentation. His work is easily maintainable by other developers.', author: 'Karim', rating: 5, company: 'Startup CTO' },
+    { quote: 'GoSite transformed our WordPress into a conversion machine. Traffic increased by 320% in four months.', author: 'B.A.', rating: 5, company: 'Founder, Fashion E-commerce' },
+    { quote: 'A true consultant, not just a developer. He helped me completely rethink my business approach.', author: 'L.M.', rating: 5, company: 'CEO, B2B SaaS' },
+    { quote: 'Fast support, impeccable code, impressive return on investment. Highly recommended.', author: 'S.K.', rating: 5, company: 'Marketing Director, Digital Agency' },
+    { quote: 'Rare technical expert. He modernized our architecture and improved performance threefold.', author: 'R.T.', rating: 5, company: 'CTO, Tech Startup' },
+    { quote: 'Best decision for our project. Delivered ahead of schedule, budget strictly respected.', author: 'F.Z.', rating: 4, company: 'Director, Industrial SME' },
+    { quote: 'Clean code, perfect documentation. His work is easily maintainable by other developers.', author: 'K.H.', rating: 5, company: 'Lead Developer, Fintech Startup' },
   ]
 
   useEffect(() => {
@@ -182,8 +182,13 @@ export default function Differentiation() {
                       &ldquo;{testimonial.quote}&rdquo;
                     </p>
                     <div className="border-t border-[#e5e7eb] pt-4">
-                      <p className="text-[#0047ab] font-semibold">{testimonial.author}</p>
-                      <p className="text-xs text-[#6b7280] mt-1">{testimonial.company}</p>
+                      <div className="flex items-center justify-center gap-3">
+                        <span className="w-8 h-8 rounded-full bg-[#0047ab] text-white text-xs font-bold flex items-center justify-center">{testimonial.author}</span>
+                        <div>
+                          <p className="text-[#0047ab] font-semibold text-sm">{testimonial.author}</p>
+                          <p className="text-xs text-[#6b7280]">{testimonial.company}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

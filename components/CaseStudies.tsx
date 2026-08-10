@@ -185,7 +185,7 @@ export default function CaseStudies() {
                     <p className="text-sm font-bold text-primary">{project.budget}</p>
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground font-bold uppercase tracking-wider mb-1">Durée</p>
+                    <p className="text-xs text-muted-foreground font-bold uppercase tracking-wider mb-1">{language === 'fr' ? 'Durée' : 'Duration'}</p>
                     <p className="text-sm font-bold text-accent">{project.timeline}</p>
                   </div>
                 </div>
@@ -224,28 +224,28 @@ export default function CaseStudies() {
             {[
               {
                 title: 'Home Service Hub',
-                description: language === 'fr' ? 'Platforme services domicile' : 'Home services platform',
+                description: language === 'fr' ? 'Plateforme de services à domicile avec booking en ligne, paiement intégré et tableau de bord prestataire.' : 'Home services platform with online booking, integrated payments and provider dashboard.',
                 url: 'https://home-service-hub-nu.vercel.app/',
                 category: 'WordPress/React',
                 color: 'from-blue-500/20 to-blue-500/5'
               },
               {
                 title: 'Assure AI Connect',
-                description: language === 'fr' ? 'Connecteur IA assurance' : 'Insurance AI connector',
+                description: language === 'fr' ? 'Connecteur IA pour assurances. Comparaison automatique de polices, chatbot conseiller et suivi des sinistres.' : 'Insurance AI connector. Automatic policy comparison, advisor chatbot and claims tracking.',
                 url: 'https://assure-ai-connect-83-23.vercel.app/',
                 category: 'AI/React',
                 color: 'from-purple-500/20 to-purple-500/5'
               },
               {
                 title: 'ProspectAI',
-                description: language === 'fr' ? 'Plateforme IA prospection' : 'AI prospecting platform',
+                description: language === 'fr' ? 'Plateforme de prospection IA. Enrichissement de données, scoring automatique et campagnes email personnalisées.' : 'AI prospecting platform. Data enrichment, automatic scoring and personalized email campaigns.',
                 url: 'https://v0-website-redesign-platform-fy.vercel.app/',
                 category: 'AI/Next.js',
                 color: 'from-green-500/20 to-green-500/5'
               },
               {
                 title: 'MarocLearn',
-                description: language === 'fr' ? 'E-learning Maroc' : 'Moroccan e-learning',
+                description: language === 'fr' ? 'Plateforme e-learning marocaine. Cours interactifs, suivi de progression et certifications professionnelles.' : 'Moroccan e-learning platform. Interactive courses, progress tracking and professional certifications.',
                 url: 'https://maroclearn.vercel.app/',
                 category: 'Education/React',
                 color: 'from-orange-500/20 to-orange-500/5'

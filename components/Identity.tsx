@@ -21,7 +21,7 @@ export default function Identity() {
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 via-accent/10 to-primary/10 border border-border p-2 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 overflow-hidden">
               <img 
                 src="/sahab-office.jpg" 
-                alt="Sahab Youssef, expert développeur WordPress React SEO, au Maroc" 
+                alt="Sahab Youssef, WordPress React SEO expert, Morocco" 
                 className="w-full h-full rounded-xl object-cover"
                 loading="eager"
                 fetchPriority="high"
@@ -82,14 +82,8 @@ export default function Identity() {
 
               <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
                 {language === 'fr'
-                  ? 'Mon expertise couvre la création de sites web performants, l\'optimisation du référencement naturel, l\'automatisation des processus et l\'intégration d\'intelligence artificielle pour améliorer vos conversions.'
-                  : 'My expertise covers building high-performance websites, search engine optimization, process automation and artificial intelligence integration to improve your conversions.'}
-              </p>
-
-              <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
-                {language === 'fr'
-                  ? 'Je combine rigueur technique et vision stratégique pour créer des solutions qui ne sont pas seulement esthétiques, mais surtout rentables.'
-                  : 'I combine technical rigor with strategic vision to create solutions that are not only aesthetic, but above all profitable.'}
+                  ? 'Mon expertise couvre WordPress haute performance, React/Next.js, SEO technique, automatisation IA et conseil stratégique — le tout orienté conversion et rentabilité.'
+                  : 'My expertise spans high-performance WordPress, React/Next.js, technical SEO, AI automation and strategic consulting — all conversion and ROI-focused.'}
               </p>
 
               {/* Key Values */}

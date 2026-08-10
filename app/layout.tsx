@@ -66,7 +66,7 @@ const jsonLd = {
 export const metadata: Metadata = {
   title: 'GoSite | Expert WordPress & React Developer — Morocco',
   description: '7 years building high-performance WordPress and React websites. Free audit available. Based in Morocco, serving clients worldwide.',
-  keywords: ['wordpress developer morocco', 'react developer', 'seo expert maroc', 'création site web maroc', 'freelance developer casablanca'],
+  keywords: ['wordpress developer morocco', 'react developer', 'seo expert morocco', 'freelance web developer casablanca', 'wordpress seo agency morocco'],
   authors: [{ name: 'Sahab Youssef' }],
   creator: 'GoSite',
   openGraph: {

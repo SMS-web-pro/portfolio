@@ -8,7 +8,7 @@ export const translations = {
       startProject: 'Discutons de votre projet',
     },
     hero: {
-      title: 'Je Crée des Sites WordPress & React Qui Rankent et Convertissent',
+      title: 'Je Crée des Sites WordPress & React Qui Rankent #1 sur Google et Convertissent',
       subtitle: '7 ans à transformer des sites sous-performants en machines à générer du trafic et des ventes — pour des entreprises au Maroc et en Europe.',
       cta1: 'Démarrer mon projet',
       cta2: 'Voir mes réalisations',
@@ -35,7 +35,7 @@ export const translations = {
         desc: 'Applications web modernes avec Next.js et Vercel. Tableaux de bord, plateformes SaaS, solutions temps réel.',
       },
       service3: {
-        title: 'Référencement Naturel & Stratégie',
+        title: 'SEO & Stratégie Google',
         desc: 'Audit SEO complet, optimisation technique, stratégie de contenu, amélioration du positionnement sur Google.',
       },
       service4: {
@@ -70,7 +70,7 @@ export const translations = {
       },
     },
     caseStudies: {
-      title: 'Mes Réalisations',
+      title: 'Mes Projets & Résultats',
       description: 'Découvrez comment mes solutions ont généré des résultats concrets pour mes clients',
       project1: {
         title: 'Plateforme SaaS WordPress',
@@ -161,7 +161,7 @@ export const translations = {
       advantage6Desc: 'Chaque él pensé pour convertir. Pas seulement esthétique, mais rentable.',
     },
     contact: {
-      title: 'Passons à l\'Action',
+      title: 'Lancez Votre Projet — Consultation Gratuite',
       description: 'Prêt à transformer votre présence digitale ? Parlons-en.',
       form: {
         name: 'Votre nom',
@@ -222,7 +222,7 @@ export const translations = {
       startProject: 'Let\'s Discuss Your Project',
     },
     hero: {
-      title: 'Transform Your Digital Presence Into a Growth Engine',
+      title: 'I Build WordPress & React Websites That Rank #1 and Convert Visitors into Customers',
       subtitle: 'Expert WordPress, React and SEO developer. I build high-performance websites that convert your visitors into customers.',
       cta1: 'Start My Project',
       cta2: 'View My Projects',
@@ -249,7 +249,7 @@ export const translations = {
         desc: 'Modern web applications with Next.js and Vercel. Dashboards, SaaS platforms, real-time solutions.',
       },
       service3: {
-        title: 'SEO & Strategy',
+        title: 'SEO Strategy & Google Rankings',
         desc: 'Complete SEO audit, technical optimization, content strategy, improved Google rankings.',
       },
       service4: {
@@ -284,7 +284,7 @@ export const translations = {
       },
     },
     caseStudies: {
-      title: 'My Projects',
+      title: 'Client Case Studies & Results',
       description: 'Discover how my solutions generated concrete results for my clients',
       project1: {
         title: 'WordPress SaaS Platform',
@@ -375,7 +375,7 @@ export const translations = {
       advantage6Desc: 'Every element designed to convert. Not just aesthetic, but profitable.',
     },
     contact: {
-      title: 'Let\'s Take Action',
+      title: 'Start Your Project — Free Consultation',
       description: 'Ready to transform your digital presence? Let\'s talk.',
       form: {
         name: 'Your Name',
