@@ -9,7 +9,7 @@ export const translations = {
     },
     hero: {
       title: 'Je crée des sites WordPress & React qui rankent, convertissent et font grandir votre business.',
-      subtitle: '7 ans à transformer des sites sous-performants en machines à générer du trafic et des ventes — pour des entreprises au Maroc et en Europe.',
+      subtitle: '7 ans à propulser des entreprises vers le sommet de Google. Sites qui rankent, convertissent et génèrent des revenus — pas juste de jolis designs.',
       cta1: 'Démarrer mon projet',
       cta2: 'Voir mes réalisations',
     },
@@ -223,7 +223,7 @@ export const translations = {
     },
     hero: {
       title: 'I Build WordPress & React Websites That Rank, Convert, and Grow Your Business.',
-      subtitle: 'Expert WordPress, React and SEO developer. I build high-performance websites that convert your visitors into customers.',
+      subtitle: '7 years propelling businesses to the top of Google. Sites that rank, convert, and generate revenue — not just pretty designs.',
       cta1: 'Start My Project',
       cta2: 'View My Projects',
     },
