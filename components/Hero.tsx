@@ -19,15 +19,15 @@ export default function Hero() {
   }
 
   return (
-    <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="relative overflow-hidden" style={{ minHeight: '600px' }}>
       {/* Video Hero Background */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+      <div className="absolute inset-0 -z-10" style={{ height: '600px' }}>
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover"
+          className="w-full h-full object-cover"
           poster=""
         >
           <source src="/perso.mp4" type="video/mp4" />
@@ -36,7 +36,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-white/40" />
       </div>
 
-      <div className="max-w-4xl mx-auto text-center">
+      {/* Content */}
+      <div className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         {/* Badge */}
         <div className="inline-block mb-6 animate-fade-in-down">
           <span className="px-5 py-2.5 rounded-full text-sm font-semibold bg-[#0047ab] text-white shadow-lg shadow-[#0047ab]/20">
