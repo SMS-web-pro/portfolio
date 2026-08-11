@@ -1,26 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.gosite.digital</loc>
-    <lastmod>2026-08-08</lastmod>
+    <loc>https://www.gosite.digital/</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gosite.digital/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.gosite.digital/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gosite.digital/" />
+  </url>
+  <url>
+    <loc>https://www.gosite.digital/fr/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gosite.digital/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.gosite.digital/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gosite.digital/" />
   </url>
   <url>
     <loc>https://www.gosite.digital/confidentialite</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.gosite.digital/conditions</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.gosite.digital/mentions-legales</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
