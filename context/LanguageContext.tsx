@@ -1,7 +1,6 @@
 'use client'
 
 import React, { createContext, useContext, useState, useEffect } from 'react'
-import { usePathname } from 'next/navigation'
 import { Language } from '@/lib/translations'
 
 interface LanguageContextType {
@@ -22,28 +21,18 @@ interface LanguageProviderProps {
 }
 
 export function LanguageProvider({ children, defaultLanguage = 'en' }: LanguageProviderProps) {
-  const pathname = usePathname()
-  const isFRPage = pathname.startsWith('/fr')
-  const initialLang: Language = isFRPage ? 'fr' : defaultLanguage
-  
-  const [language, setLanguageState] = useState<Language>(initialLang)
+  const [language, setLanguageState] = useState<Language>(defaultLanguage)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
-    // URL path takes priority over localStorage
-    if (isFRPage) {
-      setLanguageState('fr')
-      localStorage.setItem('language', 'fr')
+    const saved = localStorage.getItem('language') as Language
+    if (saved && (saved === 'fr' || saved === 'en')) {
+      setLanguageState(saved)
     } else {
-      const saved = localStorage.getItem('language') as Language
-      if (saved && (saved === 'fr' || saved === 'en')) {
-        setLanguageState(saved)
-      } else {
-        setLanguageState('en')
-      }
+      setLanguageState(defaultLanguage)
     }
-  }, [isFRPage])
+  }, [defaultLanguage])
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang)
