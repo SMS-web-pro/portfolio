@@ -8,7 +8,7 @@ export const translations = {
       startProject: 'Discutons de votre projet',
     },
     hero: {
-      title: 'Je Crée des Sites WordPress & React Qui Rankent #1 sur Google et Convertissent',
+      title: 'Je crée des sites WordPress & React qui rankent, convertissent et font grandir votre business.',
       subtitle: '7 ans à transformer des sites sous-performants en machines à générer du trafic et des ventes — pour des entreprises au Maroc et en Europe.',
       cta1: 'Démarrer mon projet',
       cta2: 'Voir mes réalisations',
@@ -222,7 +222,7 @@ export const translations = {
       startProject: 'Let\'s Discuss Your Project',
     },
     hero: {
-      title: 'I Build WordPress & React Websites That Rank #1 and Convert Visitors into Customers',
+      title: 'I Build WordPress & React Websites That Rank, Convert, and Grow Your Business.',
       subtitle: 'Expert WordPress, React and SEO developer. I build high-performance websites that convert your visitors into customers.',
       cta1: 'Start My Project',
       cta2: 'View My Projects',
