@@ -11,6 +11,12 @@ importers:
       '@emailjs/browser':
         specifier: 4.4.1
         version: 4.4.1
+      '@fontsource/playfair-display':
+        specifier: ^5.3.0
+        version: 5.3.0
+      '@fontsource/source-sans-3':
+        specifier: ^5.3.0
+        version: 5.3.0
       '@hookform/resolvers':
         specifier: ^3.10.0
         version: 3.10.0(react-hook-form@7.60.0(react@19.2.0))
@@ -231,6 +237,12 @@ packages:
 
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
+
+  '@fontsource/playfair-display@5.3.0':
+    resolution: {integrity: sha512-uJSABalvdWc10fEPppQjQocamT21LEyRfzzWfRfqbkPz+sRv+kKpYDKyluBUskvJREkJTos9epj1WjQROGu99Q==}
+
+  '@fontsource/source-sans-3@5.3.0':
+    resolution: {integrity: sha512-VrWixSgF93kOVSEkwjs9ImnAbxrBew4PgcnaJYEitG9TyJSwxjFUNJIgzB1XFP/acyAWcTDg7+sWe7JI8LTB9w==}
 
   '@hookform/resolvers@3.10.0':
     resolution: {integrity: sha512-79Dv+3mDF7i+2ajj7SkypSKHhl1cbln1OGavqrsF7p6mbUv11xpqpacPsGDCTRvCSjEEIez2ef1NveSVL3b0Ag==}
@@ -1799,6 +1811,10 @@ snapshots:
       react-dom: 19.2.0(react@19.2.0)
 
   '@floating-ui/utils@0.2.10': {}
+
+  '@fontsource/playfair-display@5.3.0': {}
+
+  '@fontsource/source-sans-3@5.3.0': {}
 
   '@hookform/resolvers@3.10.0(react-hook-form@7.60.0(react@19.2.0))':
     dependencies:

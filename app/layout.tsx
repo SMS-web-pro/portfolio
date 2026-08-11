@@ -1,14 +1,9 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { Playfair_Display, Source_Sans_3, IBM_Plex_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import BackToTop from '@/components/BackToTop'
 import { AnimatedBackground } from '@/components/AnimatedBackground'
 import './globals.css'
-
-const _playfair = Playfair_Display({ subsets: ["latin"], weight: ['400', '500', '600', '700', '800'], variable: '--font-heading' });
-const _sourceSans = Source_Sans_3({ subsets: ["latin"], weight: ['300', '400', '500', '600', '700'], variable: '--font-body' });
-const _ibmMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ['400', '500', '600'] });
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -113,7 +108,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${_playfair.variable} ${_sourceSans.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         <AnimatedBackground />
         {children}
         <Analytics />
