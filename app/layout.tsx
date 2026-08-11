@@ -108,9 +108,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="canonical" href="https://www.gosite.digital/" />
-        <link rel="alternate" hreflang="en" href="https://www.gosite.digital/" />
-        <link rel="alternate" hreflang="fr" href="https://www.gosite.digital/fr/" />
-        <link rel="alternate" hreflang="x-default" href="https://www.gosite.digital/" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

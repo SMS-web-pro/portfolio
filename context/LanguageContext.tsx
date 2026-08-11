@@ -15,13 +15,8 @@ const defaultValue: LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType>(defaultValue)
 
-interface LanguageProviderProps {
-  children: React.ReactNode
-  defaultLanguage?: Language
-}
-
-export function LanguageProvider({ children, defaultLanguage = 'en' }: LanguageProviderProps) {
-  const [language, setLanguageState] = useState<Language>(defaultLanguage)
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  const [language, setLanguageState] = useState<Language>('en')
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -29,10 +24,8 @@ export function LanguageProvider({ children, defaultLanguage = 'en' }: LanguageP
     const saved = localStorage.getItem('language') as Language
     if (saved && (saved === 'fr' || saved === 'en')) {
       setLanguageState(saved)
-    } else {
-      setLanguageState(defaultLanguage)
     }
-  }, [defaultLanguage])
+  }, [])
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang)
