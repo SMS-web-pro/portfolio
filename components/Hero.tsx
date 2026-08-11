@@ -48,9 +48,9 @@ export default function Hero() {
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#0f1419] mb-6 animate-fade-in-up leading-tight text-balance tracking-tight">
           {language === 'fr' ? (
             <>
-              Transformez Votre{' '}
+              Je crée des sites{' '}
               <span className="relative inline-block text-[#0047ab]">
-                Vision Digitale
+                WordPress & React
                 <svg className="absolute -bottom-2 left-0 w-full h-3" viewBox="0 0 200 12" preserveAspectRatio="none">
                   <path d="M0 8 Q50 0 100 8 T200 8" fill="none" stroke="#0047ab" strokeWidth="3" strokeLinecap="round" opacity="0.4">
                     <animate attributeName="d" values="M0 8 Q50 0 100 8 T200 8;M0 6 Q50 10 100 4 T200 6;M0 8 Q50 0 100 8 T200 8" dur="3s" repeatCount="indefinite" />
@@ -61,13 +61,13 @@ export default function Hero() {
                   </path>
                 </svg>
               </span>{' '}
-              En Réalité
+              qui rankent, convertissent et font grandir votre business.
             </>
           ) : (
             <>
-              Transform Your{' '}
+              I Build{' '}
               <span className="relative inline-block text-[#0047ab]">
-                Digital Vision
+                WordPress & React
                 <svg className="absolute -bottom-2 left-0 w-full h-3" viewBox="0 0 200 12" preserveAspectRatio="none">
                   <path d="M0 8 Q50 0 100 8 T200 8" fill="none" stroke="#0047ab" strokeWidth="3" strokeLinecap="round" opacity="0.4">
                     <animate attributeName="d" values="M0 8 Q50 0 100 8 T200 8;M0 6 Q50 10 100 4 T200 6;M0 8 Q50 0 100 8 T200 8" dur="3s" repeatCount="indefinite" />
@@ -78,7 +78,7 @@ export default function Hero() {
                   </path>
                 </svg>
               </span>{' '}
-              Into Reality
+              That Rank, Convert, and Grow Your Business.
             </>
           )}
         </h1>
